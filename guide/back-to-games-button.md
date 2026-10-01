@@ -16,4 +16,4 @@ key).
 - No answer: the question closes by itself after a few seconds (Settings > General) and the game keeps running.
 
 ---
-BayLauncher owner guide, version 2026-09-30 (for BayLauncher 1.0.0, in preparation). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-01 (BayLauncher 1.0.0). © 2026 BA Custom Products LLC.

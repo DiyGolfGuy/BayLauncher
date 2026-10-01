@@ -36,6 +36,9 @@ when the game ends, and **Learn** finds them for you.
   many different program names. Windows' own programs, Explorer and Task Manager are never closed, nor anything that
   was already open before the card was clicked.
 - **Must be closed first**: programs that are closed (and confirmed gone) before the card starts.
+- **Add from a folder...**: adds every program in a folder and its subfolders to the close list (for example a
+  launcher's Products folder). Crash reporters, updaters and setup programs are left out. Check the list, then
+  **Save card**.
 - Programs get a few seconds to close by themselves before they are forced (Settings > General).
 
 ## Good to know
@@ -46,4 +49,4 @@ when the game ends, and **Learn** finds them for you.
 - When a card is clicked, "Opening ..." shows until the game is up. There is no need to click again.
 
 ---
-BayLauncher owner guide, version 2026-09-30 (for BayLauncher 1.0.0, in preparation). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-01 (BayLauncher 1.0.0). © 2026 BA Custom Products LLC.

@@ -7,8 +7,10 @@ program. A guest clicks a card and the game opens. When the game is over, one bu
 BA control box) asks "End this game?", closes everything that card opened, and brings the cards back. Staff get the
 normal Windows desktop with a PIN.
 
-> **Status: the first public version (1.0.0) is being prepared. There is no download yet.**
-> This page will link the setup file when it is ready.
+## Get BayLauncher
+**[Download BayLauncher (free)](https://github.com/DiyGolfGuy/BayLauncher/releases/latest/download/BayLauncher-Setup.exe)**,
+always the newest version. The [Releases page](https://github.com/DiyGolfGuy/BayLauncher/releases) lists each version
+with its SHA-256 checksum. Then see [Installing](guide/installing.md) and [First-time setup](guide/first-time-setup.md).
 
 ## How to get out (keep this handy)
 BayLauncher never locks you out. Any of these gets you back to the normal Windows desktop:
@@ -48,6 +50,8 @@ planned for later. It is not available yet.
 - After installing, nothing runs as administrator.
 
 ## Guide
+- [Installing](guide/installing.md)
+- [First-time setup](guide/first-time-setup.md)
 - [Cards and Learn](guide/cards-and-learn.md)
 - [Recipe: GSPro with ProTee AutoStart](guide/recipe-gspro-protee-autostart.md)
 - [Recipe: TruGolf Multisport](guide/recipe-trugolf-multisport.md)
@@ -58,8 +62,8 @@ planned for later. It is not available yet.
 - [Moving your settings to another bay](guide/export-import.md)
 - [Troubleshooting](guide/troubleshooting.md)
 - [Privacy and safety](guide/privacy-and-safety.md)
-
-Install, first-time setup, updating and uninstalling are added here with the first download.
+- [Updating](guide/updating.md)
+- [Uninstalling](guide/uninstalling.md)
 
 ## What you need
 - A Windows 11 PC, 64-bit (what BayLauncher is tested on). Windows 10 64-bit may work but is not tested.
@@ -77,4 +81,4 @@ GSPro, TruGolf, E6, ProTee and ProTee Labs are trademarks of their owners. BayLa
 endorsed by or sponsored by them. It only starts and closes the programs you set up; it does not change them.
 
 ---
-BayLauncher owner guide, version 2026-09-30 (for BayLauncher 1.0.0, in preparation). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-01 (BayLauncher 1.0.0). © 2026 BA Custom Products LLC.

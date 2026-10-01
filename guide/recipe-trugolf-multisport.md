@@ -36,4 +36,4 @@ Open the card, start a sport, use Exit Game: you are back in the launcher's menu
 back. Start a sport again and use the back-to-games button: everything closes and the cards come back.
 
 ---
-BayLauncher owner guide, version 2026-09-30 (for BayLauncher 1.0.0, in preparation). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-01 (BayLauncher 1.0.0). © 2026 BA Custom Products LLC.

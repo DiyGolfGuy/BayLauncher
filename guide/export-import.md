@@ -9,4 +9,4 @@ After importing, check each card's program locations: a program installed in a d
 be chosen again with **...**. Screens are matched by Windows' screen names, so check Settings > Screens too.
 
 ---
-BayLauncher owner guide, version 2026-09-30 (for BayLauncher 1.0.0, in preparation). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-01 (BayLauncher 1.0.0). © 2026 BA Custom Products LLC.

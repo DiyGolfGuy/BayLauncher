@@ -19,4 +19,4 @@ screen until you press **Use this look** (**Undo** goes back).
 - **Show the "click to play" hint** under the cards.
 
 ---
-BayLauncher owner guide, version 2026-09-30 (for BayLauncher 1.0.0, in preparation). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-01 (BayLauncher 1.0.0). © 2026 BA Custom Products LLC.

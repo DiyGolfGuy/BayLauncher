@@ -23,9 +23,13 @@
 - Use Ctrl+Alt+Del > Task Manager > Run new task > `explorer.exe`, then see
   [Getting back to the Windows desktop](back-to-the-desktop.md).
 
+**Forgot the staff PIN**
+- Get to the desktop with Ctrl+Alt+Del > Task Manager > Run new task > `explorer.exe`, then Start > BayLauncher >
+  **Reset the staff PIN**.
+
 **Where are the logs?**
 - Settings > Tools > **Open the logs folder** (`C:\ProgramData\BayLauncher\logs`). One file per day, kept 30 days. They
   record what BayLauncher did, never the PIN.
 
 ---
-BayLauncher owner guide, version 2026-09-30 (for BayLauncher 1.0.0, in preparation). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-01 (BayLauncher 1.0.0). © 2026 BA Custom Products LLC.
