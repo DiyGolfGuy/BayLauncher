@@ -6,7 +6,9 @@
    GitHub. The page lists the file's SHA-256 checksum, so anyone who wants to can check the file is the one BA Custom
    Products published.
 2. Run it. The setup is not digitally signed yet, so Windows may say "Windows protected your PC". Choose
-   **More info** > **Run anyway**, only for the file from the official link.
+   **More info** > **Run anyway**, only for the file from the official link. On Windows 11 with Smart App Control
+   turned on, Windows may block the setup completely: contact BA Custom Products through bacustomproducts.com and we
+   will walk you through it.
 3. Approve the Windows prompt. Installing needs an administrator account; day to day, nothing runs as administrator.
 4. The setup explains what BayLauncher does, shows the ways back to the desktop, asks you to accept the license
    agreement, and asks where to install (keep the folder it suggests).

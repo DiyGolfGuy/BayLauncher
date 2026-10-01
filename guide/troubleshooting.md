@@ -2,6 +2,11 @@
 
 # Troubleshooting
 
+**Windows will not run the setup**
+- "Windows protected your PC": choose **More info** > **Run anyway** (only for the file from the official link).
+- Blocked with no Run anyway: Windows 11's Smart App Control is on. Contact BA Custom Products through
+  bacustomproducts.com and we will walk you through it.
+
 **A card does not open, or shows a problem after a while**
 - Open Settings > Cards and check each open step's program (**...**) and **Wait for**. A wrong Wait for makes the card
   wait until its timeout.
