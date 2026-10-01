@@ -10,6 +10,15 @@ normal Windows desktop with a PIN.
 > **Status: the first public version (1.0.0) is being prepared. There is no download yet.**
 > This page will link the setup file when it is ready.
 
+## How to get out (keep this handy)
+BayLauncher never locks you out. Any of these gets you back to the normal Windows desktop:
+1. **Staff PIN:** the lock button in the top-right corner of the cards > your PIN > **Desktop**.
+2. **Ctrl+Alt+Del** > **Task Manager** > **Run new task** > type `explorer.exe` > **OK**.
+3. **Restore Windows Desktop** (shortcut on the desktop, or Start > BayLauncher): the next sign-in is the normal desktop.
+4. **SAFE.txt:** make an empty file called `SAFE.txt` in `C:\ProgramData\BayLauncher`, then sign out and back in.
+
+To stop BayLauncher for good on an account: number 3. Details: [Getting back to the Windows desktop](guide/back-to-the-desktop.md).
+
 ## What it does
 - Full-screen picture cards in place of the desktop, on the screen you choose. Your own card pictures.
 - A card can run several programs in order (for example ProTee AutoStart, which then opens GSPro) and waits for the
