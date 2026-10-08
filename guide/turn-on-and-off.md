@@ -21,4 +21,4 @@ one account at a time. Use the account the bay signs in with.
   normal desktop starts instead, until the next sign-in.
 
 ---
-BayLauncher owner guide, version 2026-10-01 (BayLauncher 1.0.0). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-07 (BayLauncher 1.0.1). © 2026 BA Custom Products LLC.

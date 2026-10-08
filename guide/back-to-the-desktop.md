@@ -4,8 +4,8 @@
 
 There is always a way back. Keep this page handy for staff.
 
-1. **Staff PIN**: the lock button (top right) > PIN > **Desktop**. The cards come back by themselves after 10 minutes
-   without anyone using the PC, with a countdown first. Move the mouse to stay. Nothing you opened is closed.
+1. **Staff PIN**: the lock button (top right) > PIN > **Desktop**. After 10 minutes without anyone using the PC, a one-minute
+   countdown shows, then the cards come back by themselves. Move the mouse to stay. Nothing you opened is closed.
 2. **Ctrl+Alt+Del** > Task Manager > **Run new task** > type `explorer.exe` > OK. The full desktop and taskbar appear.
 3. **Restore Windows Desktop** (desktop shortcut, or Start > BayLauncher): turns BayLauncher off for this account from
    the next sign-in.
@@ -20,4 +20,4 @@ There is always a way back. Keep this page handy for staff.
   one twice. The cards use it within seconds.
 
 ---
-BayLauncher owner guide, version 2026-10-01 (BayLauncher 1.0.0). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-07 (BayLauncher 1.0.1). © 2026 BA Custom Products LLC.

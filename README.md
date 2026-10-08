@@ -15,13 +15,13 @@ with its SHA-256 checksum. Then see [Installing](guide/installing.md) and [First
 ## How to get out (keep this handy)
 BayLauncher never locks you out. Any of these gets you back to the normal Windows desktop:
 1. **Staff PIN:** press the lock button in the top-right corner of the cards, enter your PIN, choose **Desktop**.
-   The cards come back by themselves after 10 minutes without anyone using the PC.
+   After 10 minutes without anyone using the PC, a one-minute countdown shows, then the cards come back by themselves.
 2. **Ctrl+Alt+Del:** press the three keys together, choose **Task Manager** > **Run new task**, type `explorer.exe`,
    press **OK**. The full desktop and taskbar appear.
 3. **Restore Windows Desktop:** after 1 or 2, use the shortcut on the desktop (or Start > BayLauncher > Restore Windows
    Desktop). From the next sign-in this account starts to the normal desktop.
 4. **SAFE.txt:** make an empty file called `SAFE.txt` in `C:\ProgramData\BayLauncher`, then sign out and back in.
-   Delete the file to go back to the cards.
+   Delete the file, then sign out and back in, to go back to the cards.
 
 To stop BayLauncher for good on an account: number 3. Details: [Getting back to the Windows desktop](guide/back-to-the-desktop.md).
 
@@ -34,8 +34,10 @@ To stop BayLauncher for good on an account: number 3. Details: [Getting back to 
   back. Closing the game itself does the same.
 - Side screens show a background picture.
 - A staff PIN behind the lock button opens Settings or the normal Windows desktop. The cards come back by themselves
-  after 10 minutes without anyone using the desktop, and nothing you left open is closed.
+  after 10 minutes without anyone using the desktop (and a one-minute countdown), and nothing you left open is closed.
 - Settings and pictures can be exported and imported to set up the next bay.
+- Help inside the program: **? Help** (or F1) in Settings opens this guide at the chapter for that tab. Settings >
+  **About** shows the version, the edition and the PC's Bay ID.
 
 ## Free
 BayLauncher is free, with every feature. The free edition shows the BA Custom Products background on every screen
@@ -81,4 +83,4 @@ GSPro, TruGolf, E6, ProTee and ProTee Labs are trademarks of their owners. BayLa
 endorsed by or sponsored by them. It only starts and closes the programs you set up; it does not change them.
 
 ---
-BayLauncher owner guide, version 2026-10-01 (BayLauncher 1.0.0). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-07 (BayLauncher 1.0.1). © 2026 BA Custom Products LLC.

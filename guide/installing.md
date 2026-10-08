@@ -2,8 +2,9 @@
 
 # Installing
 
-1. Download `BayLauncher-Setup-<version>.exe` only from the link on bacustomproducts.com or the BayLauncher page on
-   GitHub. The page lists the file's SHA-256 checksum, so anyone who wants to can check the file is the one BA Custom
+1. Download the setup only from the link on bacustomproducts.com or the BayLauncher page on GitHub. The download
+   link gives `BayLauncher-Setup.exe`; the Releases page also lists it as `BayLauncher-Setup-<version>.exe` (the same
+   file). The page lists the file's SHA-256 checksum, so anyone who wants to can check the file is the one BA Custom
    Products published.
 2. Run it. The setup is not digitally signed yet, so Windows may say "Windows protected your PC". Choose
    **More info** > **Run anyway**, only for the file from the official link. On Windows 11 with Smart App Control
@@ -12,7 +13,8 @@
 3. Approve the Windows prompt. Installing needs an administrator account; day to day, nothing runs as administrator.
 4. The setup explains what BayLauncher does, shows the ways back to the desktop, asks you to accept the license
    agreement, and asks where to install (keep the folder it suggests).
-5. On the last page, tick "Open the 'Back to the desktop' sheet to print", print it, and keep it next to the bay PC.
+5. On the last page, leave "Open the 'Back to the desktop' sheet to print" ticked, print the sheet, and keep it next
+   to the bay PC.
 
 ## What installing changes
 - The program goes in `C:\Program Files\BA Custom Products\BayLauncher`, with a Start menu folder named BayLauncher
@@ -26,4 +28,4 @@ PC, Windows Server, Windows older than Windows 10 version 22H2, a main screen sm
 that already starts another kiosk or launcher program instead of the desktop.
 
 ---
-BayLauncher owner guide, version 2026-10-01 (BayLauncher 1.0.0). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-07 (BayLauncher 1.0.1). © 2026 BA Custom Products LLC.

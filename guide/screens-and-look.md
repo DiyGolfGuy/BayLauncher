@@ -5,7 +5,7 @@
 ## Screens
 Settings > **Screens** lists every screen Windows knows.
 - **Identify all screens** shows a big number on each screen, so you know which is which.
-- Select the screen that should show the cards and press **Use for the carousel**, then **Save screen**.
+- Select the screen that should show the cards and press **Use for the carousel**. It is saved and used at once.
 - In the free edition, every screen shows the BA Custom Products background: faded on the side screens and darker
   behind the cards. It is always shown whole, never cropped, so its QR code stays readable.
 
@@ -19,4 +19,4 @@ screen until you press **Use this look** (**Undo** goes back).
 - **Show the "click to play" hint** under the cards.
 
 ---
-BayLauncher owner guide, version 2026-10-01 (BayLauncher 1.0.0). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-07 (BayLauncher 1.0.1). © 2026 BA Custom Products LLC.
