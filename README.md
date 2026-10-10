@@ -83,4 +83,4 @@ GSPro, TruGolf, E6, ProTee and ProTee Labs are trademarks of their owners. BayLa
 endorsed by or sponsored by them. It only starts and closes the programs you set up; it does not change them.
 
 ---
-BayLauncher owner guide, version 2026-10-07 (BayLauncher 1.0.1). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-07 (BayLauncher 1.0.2). © 2026 BA Custom Products LLC.

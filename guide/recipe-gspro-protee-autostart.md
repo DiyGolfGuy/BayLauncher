@@ -30,4 +30,4 @@ Click the card: "Opening GSPro" shows, then GSPro comes up in the range. Press t
 **Yes, end it**: everything on the list closes and the cards come back. Do it twice.
 
 ---
-BayLauncher owner guide, version 2026-10-07 (BayLauncher 1.0.1). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-07 (BayLauncher 1.0.2). © 2026 BA Custom Products LLC.

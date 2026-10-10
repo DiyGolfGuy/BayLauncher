@@ -13,4 +13,4 @@
    later reinstall.
 
 ---
-BayLauncher owner guide, version 2026-10-07 (BayLauncher 1.0.1). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-07 (BayLauncher 1.0.2). © 2026 BA Custom Products LLC.

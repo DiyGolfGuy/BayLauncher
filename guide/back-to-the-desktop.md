@@ -20,4 +20,4 @@ There is always a way back. Keep this page handy for staff.
   one twice. The cards use it within seconds.
 
 ---
-BayLauncher owner guide, version 2026-10-07 (BayLauncher 1.0.1). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-07 (BayLauncher 1.0.2). © 2026 BA Custom Products LLC.

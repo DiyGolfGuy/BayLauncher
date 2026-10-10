@@ -20,4 +20,4 @@ chosen, so no guest can set one.
 Run it again any time: Settings > Tools > **Run the first-time setup again**.
 
 ---
-BayLauncher owner guide, version 2026-10-07 (BayLauncher 1.0.1). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-07 (BayLauncher 1.0.2). © 2026 BA Custom Products LLC.

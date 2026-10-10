@@ -28,4 +28,4 @@ PC, Windows Server, Windows older than Windows 10 version 22H2, a main screen sm
 that already starts another kiosk or launcher program instead of the desktop.
 
 ---
-BayLauncher owner guide, version 2026-10-07 (BayLauncher 1.0.1). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-07 (BayLauncher 1.0.2). © 2026 BA Custom Products LLC.
