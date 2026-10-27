@@ -14,20 +14,30 @@ clicks through ProTee Labs and GSPro to the range by itself:
   Compatibility). BayLauncher cannot close a program that runs as administrator.
 
 ## The card
-1. Settings > Cards > **Add card**. Name it (for example "GSPro") and choose a picture.
-2. Open step 1: **...** to ProTee AutoStart's program. **Arguments**: `/run` (skips its 5-second countdown).
-   **Wait for**: `GSPro`. **Timeout (s)**: `660` (AutoStart gives up after 600 seconds; this allows a minute more).
-3. **Save card**, then **Learn...**: start, wait until GSPro is fully in the range, **Done**. Keep ProTee Labs, GSPro
-   and AutoStart ticked, untick anything else, and save.
-4. Add `GSPconnect` to the close list if Learn did not list it. GSPro starts it (its window is "ProTee United VX"). If
-   it stays open, ProTee Labs thinks GSPro is still running and will not open it the next time.
+
+1. Settings > Cards > **Add card**. Give it a name such as "GSPro" and choose a picture.
+2. On **Programs to open**, choose the GSPro with ProTee AutoStart recipe and browse to ProTee AutoStart's program.
+   Its one open step uses **Arguments** `/run` (skips AutoStart's 5-second countdown), **Wait for** `GSPro`, and
+   **Timeout (s)** `660` (AutoStart gives up after 600 seconds; this allows a minute more). Do not add another open
+   step for ProTee Labs or GSPro when AutoStart already opens them.
+3. On **Programs to close**, keep GSPro, `GSPconnect`, ProTee Labs and AutoStart in the closing group. Use
+   **Learn by opening this card...** to review anything else this bay starts. `GSPconnect` has the window title "ProTee United VX"; if
+   it stays open, ProTee Labs can think GSPro is still running on the next launch.
+4. Check the ender choices. Exiting GSPro should finish the session; if exiting ProTee Labs is also meant to end it,
+   make it an ender too. Keep the connector and any short-lived helpers as close-only rows.
+5. **Review and try it** > **Try this card...**, then finish the test and **Save card**.
 
 A working close list looks like: `GSPro, GSPconnect, ProTee Labs, ProTeeAutoStart`. If AutoStart runs as an AutoHotkey
 script, it shows as AutoHotkey (for example `AutoHotkey64`) instead.
 
 ## Check it
-Click the card: "Opening GSPro" shows, then GSPro comes up in the range. Press the back-to-games button and choose
-**Yes, end it**: everything on the list closes and the cards come back. Do it twice.
+
+Expect **Opening GSPro**, then the GSPro window. Check the ProTee connection and reach the range yourself: a window
+wait does not check those. Quit GSPro normally and check that the connector, ProTee Labs and AutoStart close too.
+Open again and quit ProTee Labs if you made it an ender. Finally open again, press the back-to-games button and
+choose **Yes, end it**. Each route should bring the cards back, and the next launch should work without clearing
+leftovers by hand. Leave the card unchanged if a known working bay uses a different program name; check its actual
+programs before changing it.
 
 ---
-BayLauncher owner guide, version 2026-10-07 (BayLauncher 1.0.3). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-27 (BayLauncher 1.0.4). © 2026 BA Custom Products LLC.

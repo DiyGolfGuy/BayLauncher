@@ -2,6 +2,10 @@
 
 **Free game cards for golf-simulator bays, by BA Custom Products.**
 
+> **Version 1.0.4:** guided card setup, reviewed program groups, safer Learn and card testing, plus duplicate,
+> discard and undo. Automated checks and installer verification passed; hands-on Windows and real-game checks
+> remain pending. The separate customer paid Unlock version, 1.1.0, remains unreleased.
+
 BayLauncher replaces the Windows desktop on a bay PC with big picture cards: GSPro, TruGolf Multisport or any other
 program. A guest clicks a card and the game opens. When the game is over, one button (a key combo, or a button on a
 BA control box) asks "End this game?", closes everything that card opened, and brings the cards back. Staff get the
@@ -29,7 +33,10 @@ To stop BayLauncher for good on an account: number 3. Details: [Getting back to 
 - Full-screen picture cards in place of the desktop, on the screen you choose. Your own card pictures.
 - A card can run several programs in order (for example ProTee AutoStart, which then opens GSPro) and waits for the
   game window.
-- **Learn** watches while you start a game and lists every program that opened, so closing is done right.
+- A guided card builder takes you through a name and picture, what opens, what closes, and a review.
+- **Learn** lists new programs for you to review and add to a card's close list.
+- **Test card...** uses the same launch and close engine as the cards screen. You check the game and its helpers on
+  this PC; seeing a window does not prove the launch monitor is connected or the game is ready to play.
 - **End this game?** from a key combo or a control-box button; everything the card opened closes and the cards come
   back. Closing the game itself does the same.
 - Side screens show a background picture.
@@ -68,7 +75,8 @@ planned for later. It is not available yet.
 - [Uninstalling](guide/uninstalling.md)
 
 ## What you need
-- A Windows 11 PC, 64-bit (what BayLauncher is tested on). Windows 10 64-bit may work but is not tested.
+- A Windows 11 PC, 64-bit. The new 1.0.4 interface still needs hands-on Windows testing. Windows 10 64-bit may work
+  but is not tested.
 - The games already installed and working on that PC.
 - An administrator account to install it. Day to day, nothing runs as administrator.
 
@@ -83,4 +91,4 @@ GSPro, TruGolf, E6, ProTee and ProTee Labs are trademarks of their owners. BayLa
 endorsed by or sponsored by them. It only starts and closes the programs you set up; it does not change them.
 
 ---
-BayLauncher owner guide, version 2026-10-07 (BayLauncher 1.0.3). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-27 (BayLauncher 1.0.4). © 2026 BA Custom Products LLC.
