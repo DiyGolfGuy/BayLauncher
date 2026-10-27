@@ -1,0 +1,190 @@
+# PUBLIC_BUNDLE_URL: https://sdmntprwestus.oaiusercontent.com/files/00000000-e264-8230-94f5-c3a9702496fc/raw?se=2026-10-27T05%3A30%3A08Z&sp=r&sv=2026-02-06&sr=b&scid=284a2159-eee3-475b-9ce4-b10b9772c61c&skoid=1a0ef048-201c-43e0-8950-52d58956a71a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-26T23%3A13%3A00Z&ske=2026-10-27T23%3A13%3A00Z&sks=b&skv=2026-02-06&sig=4IJENz0rQ/w16Oz0hpWzOv9uParVPBVqVd8/zMwSl6k%3D
+# The selected archive contains only the Free installer, two public PDFs, and checksums.
+# Read the signed URL from this file at the triggering commit so it is never echoed as a step environment value.
+name: Publish authorized Free 1.0.3 release
+
+on:
+  push:
+    branches: [release/1.0.3-publication]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: public-release-1.0.3
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.repository == 'DiyGolfGuy/BayLauncher' && github.ref == 'refs/heads/release/1.0.3-publication'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PUBLIC_BUNDLE_SHA256: '129ef96965c4ae5dccf90d5825a4b832d190f5d386085979bee06fb093d2513f'
+      PUBLIC_DOCS_COMMIT: '4c2f3a4ba46793f429acc9cfad10177298ec9ff7'
+    steps:
+      - name: Verify Free-only archive, stage release, verify uploaded bytes, and publish latest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import base64, hashlib, json, os, re, shutil, stat, subprocess, urllib.parse, urllib.request, zipfile
+
+          repo, tag = 'DiyGolfGuy/BayLauncher', 'v1.0.3'
+          docs_commit = os.environ['PUBLIC_DOCS_COMMIT']
+          archive_sha = os.environ['PUBLIC_BUNDLE_SHA256']
+          if os.environ['GITHUB_REPOSITORY'] != repo or os.environ['GITHUB_REF'] != 'refs/heads/release/1.0.3-publication':
+              raise SystemExit('Wrong publication repository or branch')
+          if not re.fullmatch(r'[0-9a-f]{40}', docs_commit) or not re.fullmatch(r'[0-9a-f]{64}', archive_sha):
+              raise SystemExit('Publication inputs are not pinned')
+
+          def gh(*args, missing=False):
+              result = subprocess.run(['gh', *args], text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+              if result.returncode:
+                  if missing and 'HTTP 404' in result.stderr:
+                      return None
+                  raise SystemExit('GitHub operation failed: ' + result.stderr.strip())
+              return result.stdout
+
+          def api(endpoint, missing=False):
+              text = gh('api', endpoint, missing=missing)
+              return None if text is None else json.loads(text)
+
+          identity = api('repos/' + repo)
+          if identity['full_name'] != repo or identity['private'] is not False or identity.get('visibility') != 'public':
+              raise SystemExit('Publication target is not the expected public repository')
+          if api(f'repos/{repo}/commits/{docs_commit}')['sha'] != docs_commit:
+              raise SystemExit('Public documentation commit mismatch')
+
+          # No checkout or private-repository token is needed. Do not log the archive URL.
+          source = api(f"repos/{repo}/contents/.github/workflows/publish-1.0.3.yml?ref={os.environ['GITHUB_SHA']}")
+          workflow = base64.b64decode(source['content']).decode('utf-8')
+          match = re.search(r'^# PUBLIC_BUNDLE_URL: (\S+)$', workflow, re.M)
+          if not match: raise SystemExit('Public archive address missing')
+          url = match.group(1)
+          parsed = urllib.parse.urlsplit(url)
+          host = parsed.hostname or ''
+          if parsed.scheme != 'https' or not (host == 'oaiusercontent.com' or host.endswith('.oaiusercontent.com')) or parsed.username or parsed.password or parsed.port not in (None, 443):
+              raise SystemExit('Unexpected public archive host')
+          work = Path(os.environ['RUNNER_TEMP']) / 'public-release-1.0.3'
+          work.mkdir()
+          archive = work / 'free-bundle.zip'
+          try:
+              with urllib.request.urlopen(url, timeout=120) as response, archive.open('wb') as output:
+                  shutil.copyfileobj(response, output)
+          except Exception as error:
+              raise SystemExit('Public archive download failed: ' + type(error).__name__) from None
+          if hashlib.sha256(archive.read_bytes()).hexdigest() != archive_sha:
+              raise SystemExit('Public archive SHA-256 mismatch')
+
+          folder = work / 'assets'
+          folder.mkdir()
+          payload = {'BayLauncher-Setup-1.0.3.exe', 'BACK-TO-THE-DESKTOP-CARD.pdf', 'BayLauncher-owner-guide.pdf'}
+          expected = payload | {'SHA256SUMS.txt'}
+          with zipfile.ZipFile(archive) as bundle:
+              entries = bundle.infolist()
+              if len(entries) != 4 or {entry.filename for entry in entries} != expected:
+                  raise SystemExit('Public bundle must contain exactly the four approved Free files')
+              if sum(entry.file_size for entry in entries) > 200 * 1024 * 1024:
+                  raise SystemExit('Unexpected public bundle size')
+              for entry in entries:
+                  kind = stat.S_IFMT(entry.external_attr >> 16)
+                  if entry.is_dir() or kind not in (0, stat.S_IFREG) or entry.flag_bits & 1:
+                      raise SystemExit('Public bundle contains an invalid file entry')
+                  with bundle.open(entry) as source_file, (folder / entry.filename).open('xb') as output:
+                      shutil.copyfileobj(source_file, output)
+          listed = set()
+          for line in (folder / 'SHA256SUMS.txt').read_text().splitlines():
+              match = re.fullmatch(r'([0-9a-f]{64})  ([^/\\]+)', line)
+              if not match or match[2] not in payload or match[2] in listed:
+                  raise SystemExit('Unexpected public checksum entry')
+              if hashlib.sha256((folder / match[2]).read_bytes()).hexdigest() != match[1]:
+                  raise SystemExit('Public payload checksum mismatch')
+              listed.add(match[2])
+          if listed != payload: raise SystemExit('Public checksum list is incomplete')
+
+          # The fixed website link and the versioned setup must serve identical bytes.
+          shutil.copyfile(folder / 'BayLauncher-Setup-1.0.3.exe', folder / 'BayLauncher-Setup.exe')
+          payload.add('BayLauncher-Setup.exe')
+          checksums = {name:hashlib.sha256((folder / name).read_bytes()).hexdigest() for name in payload}
+          if checksums['BayLauncher-Setup.exe'] != checksums['BayLauncher-Setup-1.0.3.exe']:
+              raise SystemExit('Fixed setup alias differs')
+          (folder / 'SHA256SUMS.txt').write_text(''.join(checksums[name] + '  ' + name + '\n' for name in sorted(payload)))
+          expected = payload | {'SHA256SUMS.txt'}
+          checksums['SHA256SUMS.txt'] = hashlib.sha256((folder / 'SHA256SUMS.txt').read_bytes()).hexdigest()
+          sizes = {name:(folder / name).stat().st_size for name in expected}
+
+          def tag_commit():
+              reference = api(f'repos/{repo}/git/ref/tags/{tag}', missing=True)
+              if reference is None: return None
+              obj = reference['object']
+              for unused in range(8):
+                  if obj['type'] == 'commit': return obj['sha']
+                  if obj['type'] != 'tag': break
+                  obj = api(f"repos/{repo}/git/tags/{obj['sha']}")['object']
+              raise SystemExit('Unexpected release tag object')
+
+          existing_tag = tag_commit()
+          if existing_tag is not None and existing_tag != docs_commit:
+              raise SystemExit('Existing release tag names another commit')
+          release = api(f'repos/{repo}/releases/tags/{tag}', missing=True)
+          if release is None:
+              notes = work / 'release-notes.md'
+              notes.write_text('''Free game cards for golf-simulator bays, by BA Custom Products.
+
+          What's new in 1.0.3:
+          - More reliable recovery when the launcher restarts during a game or a game closes quickly.
+          - An interrupted game-closing operation can be retried without leaving the closing screen stuck.
+          - Invalid settings are rejected with a clear error before replacing the current settings.
+
+          Updating keeps your cards, pictures, settings and staff PIN. Download BayLauncher-Setup-1.0.3.exe, or use the identical fixed-name BayLauncher-Setup.exe. The two PDF guides and SHA256SUMS.txt are included below.
+
+          The setup is not digitally signed. Keep the Back-to-the-desktop card next to the bay PC.
+          ''')
+              gh('release', 'create', tag, '--repo', repo, '--draft', '--target', docs_commit,
+                 '--title', 'BayLauncher 1.0.3', '--notes-file', str(notes))
+              release = api(f'repos/{repo}/releases/tags/{tag}')
+          if release['draft']:
+              if release['target_commitish'] != docs_commit:
+                  raise SystemExit('Existing draft names another documentation commit')
+              if any(asset['name'] not in expected for asset in release['assets']):
+                  raise SystemExit('Unexpected asset in existing public draft')
+              gh('release', 'upload', tag, '--repo', repo, '--clobber', *[str(folder / name) for name in sorted(expected)])
+          elif tag_commit() != docs_commit:
+              raise SystemExit('Published release does not name the pinned commit')
+
+          def verify_remote_assets():
+              assets = api(f"repos/{repo}/releases/{release['id']}/assets")
+              if len(assets) != 5 or {asset['name'] for asset in assets} != expected:
+                  raise SystemExit('Remote release assets are not exactly the five approved files')
+              for asset in assets:
+                  name = asset['name']
+                  if asset['state'] != 'uploaded' or asset['size'] != sizes[name]:
+                      raise SystemExit('Remote release asset size or state mismatch')
+                  if asset.get('digest') and asset['digest'] != 'sha256:' + checksums[name]:
+                      raise SystemExit('Remote release asset digest mismatch')
+
+          verify_remote_assets()
+          downloaded = work / 'remote-assets'
+          downloaded.mkdir()
+          gh('release', 'download', tag, '--repo', repo, '--dir', str(downloaded))
+          if {path.name for path in downloaded.iterdir()} != expected:
+              raise SystemExit('Downloaded remote asset list mismatch')
+          for name in expected:
+              if hashlib.sha256((downloaded / name).read_bytes()).hexdigest() != checksums[name]:
+                  raise SystemExit('Downloaded remote release bytes differ')
+          if (downloaded / 'BayLauncher-Setup.exe').read_bytes() != (downloaded / 'BayLauncher-Setup-1.0.3.exe').read_bytes():
+              raise SystemExit('Downloaded fixed alias differs from versioned setup')
+
+          # Existing published releases are verified above; they are never clobbered.
+          gh('release', 'edit', tag, '--repo', repo, '--draft=false', '--latest')
+          if tag_commit() != docs_commit:
+              raise SystemExit('Published tag commit mismatch')
+          latest = api(f'repos/{repo}/releases/latest')
+          if latest['tag_name'] != tag or latest['draft'] or latest['prerelease']:
+              raise SystemExit('Latest release verification failed')
+          verify_remote_assets()
+          print('Published and verified: ' + latest['html_url'])
+          PY
