@@ -1,4 +1,4 @@
-# PUBLIC_BUNDLE_URL: https://sdmntprwestus.oaiusercontent.com/files/00000000-e264-8230-94f5-c3a9702496fc/raw?se=2026-10-27T05%3A30%3A08Z&sp=r&sv=2026-02-06&sr=b&scid=284a2159-eee3-475b-9ce4-b10b9772c61c&skoid=1a0ef048-201c-43e0-8950-52d58956a71a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-26T23%3A13%3A00Z&ske=2026-10-27T23%3A13%3A00Z&sks=b&skv=2026-02-06&sig=4IJENz0rQ/w16Oz0hpWzOv9uParVPBVqVd8/zMwSl6k%3D
+# PUBLIC_BUNDLE_URL: https://sdmntprwestus2.oaiusercontent.com/files/00000000-eeac-81f8-b48f-2c11d1a5dd3a/raw?se=2026-10-27T05%3A31%3A48Z&sp=r&sv=2026-02-06&sr=b&scid=284a2159-eee3-475b-9ce4-b10b9772c61c&skoid=1a0ef048-201c-43e0-8950-52d58956a71a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-26T23%3A32%3A50Z&ske=2026-10-27T23%3A32%3A50Z&sks=b&skv=2026-02-06&sig=wd8%2BOVBZAUzLjK3AUa/CSjRyX7tGnN8SSErH5zTvL8E%3D
 # The selected archive contains only the Free installer, two public PDFs, and checksums.
 # Read the signed URL from this file at the triggering commit so it is never echoed as a step environment value.
 name: Publish authorized Free 1.0.3 release
@@ -45,7 +45,7 @@ jobs:
               if result.returncode:
                   if missing and 'HTTP 404' in result.stderr:
                       return None
-                  raise SystemExit('GitHub operation failed: ' + result.stderr.strip())
+                  raise SystemExit('GitHub operation failed (' + ' '.join(args[:2]) + '): ' + result.stderr.strip())
               return result.stdout
 
           def api(endpoint, missing=False):
@@ -129,7 +129,13 @@ jobs:
           existing_tag = tag_commit()
           if existing_tag is not None and existing_tag != docs_commit:
               raise SystemExit('Existing release tag names another commit')
-          release = api(f'repos/{repo}/releases/tags/{tag}', missing=True)
+          def find_release():
+              # The tag endpoint excludes unpublished drafts; the authenticated release list includes them.
+              matches = [item for item in api(f'repos/{repo}/releases?per_page=100') if item['tag_name'] == tag]
+              if len(matches) > 1: raise SystemExit('Release tag is not unique')
+              return matches[0] if matches else None
+
+          release = find_release()
           if release is None:
               notes = work / 'release-notes.md'
               notes.write_text('''Free game cards for golf-simulator bays, by BA Custom Products.
@@ -145,7 +151,8 @@ jobs:
           ''')
               gh('release', 'create', tag, '--repo', repo, '--draft', '--target', docs_commit,
                  '--title', 'BayLauncher 1.0.3', '--notes-file', str(notes))
-              release = api(f'repos/{repo}/releases/tags/{tag}')
+              release = find_release()
+              if release is None: raise SystemExit('Created draft is missing from the authenticated release list')
           if release['draft']:
               if release['target_commitish'] != docs_commit:
                   raise SystemExit('Existing draft names another documentation commit')
