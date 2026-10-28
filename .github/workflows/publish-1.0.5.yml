@@ -1,4 +1,4 @@
-# PUBLIC_BUNDLE_URL: https://sdmntprwestus3.oaiusercontent.com/files/00000000-a9b4-81fd-bec2-5af654d2561b/raw?se=2026-10-28T00%3A37%3A07Z&sp=r&sv=2026-02-06&sr=b&scid=8fdfa068-830a-4ac8-9c17-25bb144fd334&skoid=1a0ef048-201c-43e0-8950-52d58956a71a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-27T11%3A52%3A06Z&ske=2026-10-28T11%3A52%3A06Z&sks=b&skv=2026-02-06&sig=9sw9Zwh0iE3tVciNFKZuRL7/hO4e3IFX6IMr%2B0LzsGY%3D
+# PUBLIC_BUNDLE_URL: https://sdmntprwestus.oaiusercontent.com/files/00000000-b5f0-8230-bb6c-593dd5af6bc5/raw?se=2026-10-28T00%3A40%3A15Z&sp=r&sv=2026-02-06&sr=b&scid=8fdfa068-830a-4ac8-9c17-25bb144fd334&skoid=1a0ef048-201c-43e0-8950-52d58956a71a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-27T13%3A46%3A00Z&ske=2026-10-28T13%3A46%3A00Z&sks=b&skv=2026-02-06&sig=KOS%2BW8tYd6r3fjODWg9%2BsrSKTW9ki1YRRo9alA43wlA%3D
 # The selected archive contains only the Free installer, two public PDFs, third-party notices, and checksums.
 # Read the signed URL from this file at the triggering commit so it is never echoed as a step environment value.
 name: Publish authorized Free 1.0.5 release
@@ -30,7 +30,7 @@ jobs:
           set -euo pipefail
           python3 - <<'PY'
           from pathlib import Path
-          import base64, hashlib, json, os, re, shutil, stat, subprocess, urllib.parse, urllib.request, zipfile
+          import base64, hashlib, json, os, re, shutil, stat, subprocess, time, urllib.parse, urllib.request, zipfile
 
           repo, tag = 'DiyGolfGuy/BayLauncher', 'v1.0.5'
           docs_commit = os.environ['PUBLIC_DOCS_COMMIT']
@@ -157,7 +157,10 @@ jobs:
           ''')
               gh('release', 'create', tag, '--repo', repo, '--draft', '--target', docs_commit,
                  '--title', 'BayLauncher 1.0.5', '--notes-file', str(notes))
-              release = find_release()
+              for attempt in range(6):
+                  release = find_release()
+                  if release is not None: break
+                  if attempt < 5: time.sleep(2)
               if release is None: raise SystemExit('Created draft is missing from the authenticated release list')
           if release['draft']:
               if release['target_commitish'] != docs_commit:
@@ -193,10 +196,12 @@ jobs:
 
           # Existing published releases are verified above; they are never clobbered.
           gh('release', 'edit', tag, '--repo', repo, '--draft=false', '--latest')
-          if tag_commit() != docs_commit:
-              raise SystemExit('Published tag commit mismatch')
-          latest = api(f'repos/{repo}/releases/latest')
-          if latest['tag_name'] != tag or latest['draft'] or latest['prerelease']:
+          for attempt in range(6):
+              latest = api(f'repos/{repo}/releases/latest', missing=True)
+              if tag_commit() == docs_commit and latest is not None and latest['tag_name'] == tag and not latest['draft'] and not latest['prerelease']:
+                  break
+              if attempt < 5: time.sleep(2)
+          else:
               raise SystemExit('Latest release verification failed')
           verify_remote_assets()
           print('Published and verified: ' + latest['html_url'])
