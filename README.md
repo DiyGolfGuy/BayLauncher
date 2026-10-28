@@ -2,13 +2,15 @@
 
 **Free game cards for golf-simulator bays, by BA Custom Products.**
 
-> **Version 1.0.4:** guided card setup, reviewed program groups, safer Learn and card testing, plus duplicate,
-> discard and undo. Automated checks and installer verification passed; hands-on Windows and real-game checks
-> remain pending. The separate customer paid Unlock version, 1.1.0, remains unreleased.
+> **Version 1.0.5:** optional extra apps with saved layouts, a built-in **Website panel (Preview)**, searchable
+> help and three new Free backgrounds. Website panels are an optional compatibility preview: a loaded window does
+> not prove a stream can play or sign in. See the checks and provider notes below. The separate customer paid Unlock
+> version, 1.1.0, remains unreleased.
 
 BayLauncher replaces the Windows desktop on a bay PC with big picture cards: GSPro, TruGolf Multisport or any other
 program. A guest clicks a card and the game opens. When the game is over, one button (a key combo, or a button on a
-BA control box) asks "End this game?", closes everything that card opened, and brings the cards back. Staff get the
+BA control box) asks "End this game?", closes the card's selected game group, follows its extra-app closing choices, and brings the
+cards back. Staff get the
 normal Windows desktop with a PIN.
 
 ## Get BayLauncher
@@ -37,8 +39,11 @@ To stop BayLauncher for good on an account: number 3. Details: [Getting back to 
 - **Learn** lists new programs for you to review and add to a card's close list.
 - **Test card...** uses the same launch and close engine as the cards screen. You check the game and its helpers on
   this PC; seeing a window does not prove the launch monitor is connected or the game is ready to play.
-- **End this game?** from a key combo or a control-box button; everything the card opened closes and the cards come
-  back. Closing the game itself does the same.
+- **End this game?** from a key combo or a control-box button closes the selected game group and follows the extra-app
+  closing choices, then brings the cards back. Closing a configured game ender does the same.
+- Optional extra apps can open with a card. Compatible newly started app windows can use saved screen, size and
+  position. A built-in **Website panel (Preview)** can open a website in its own movable, resizable window.
+- Help has offline topic search and task shortcuts; optional larger steps explain extra apps and their layouts.
 - Side screens show a background picture.
 - A staff PIN behind the lock button opens Settings or the normal Windows desktop. The cards come back by themselves
   after 10 minutes without anyone using the desktop (and a one-minute countdown), and nothing you left open is closed.
@@ -47,15 +52,17 @@ To stop BayLauncher for good on an account: number 3. Details: [Getting back to 
   **About** shows the version, the edition and the PC's Bay ID.
 
 ## Free
-BayLauncher is free, with every feature. The free edition shows the BA Custom Products background on every screen
-(it advertises BA Custom Products and has a QR code to bacustomproducts.com) and a small BA Custom Products mark in
-a corner of the cards screen. An optional one-time unlock per PC, for your own backgrounds and sponsor pictures, is
-planned for later. It is not available yet.
+BayLauncher is free, with every feature. Choose a built-in background in Settings > **Look**: Classic BA Custom
+Products, Midnight simulator, Golden-hour links or Mountain valley. Your choice appears behind the cards and on the
+side screens. Classic keeps its original BA artwork and readable QR code; the other choices retain a small BA logo,
+BA Custom Products name and bacustomproducts.com advertising panel. An optional one-time unlock per PC, for your own
+backgrounds and sponsor pictures, is planned for later. It is not available yet.
 
 ## Safe by design
 - It blocks no keys and sets no Windows policies. When BayLauncher is not running, the PC is a normal PC.
 - There are always four ways back to the normal desktop: see [Getting back to the Windows desktop](guide/back-to-the-desktop.md).
-- It does not connect to the internet and collects no personal data: see [Privacy and safety](guide/privacy-and-safety.md).
+- It has no built-in upload of your settings, pictures or logs. Optional apps and websites can use the network:
+  see [Privacy and safety](guide/privacy-and-safety.md).
 - After installing, nothing runs as administrator.
 
 ## Guide
@@ -75,8 +82,10 @@ planned for later. It is not available yet.
 - [Uninstalling](guide/uninstalling.md)
 
 ## What you need
-- A Windows 11 PC, 64-bit. The new 1.0.4 interface still needs hands-on Windows testing. Windows 10 64-bit may work
-  but is not tested.
+- A Windows 11 PC, 64-bit. New 1.0.5 window, website and game combinations still need hands-on testing on that PC.
+  Windows 10 64-bit may work but is not tested.
+- The optional website panel needs Microsoft WebView2 Runtime and internet access for its websites. The runtime is
+  normally included with Windows 11; if it is unavailable, the panel explains that and offers the normal browser.
 - The games already installed and working on that PC.
 - An administrator account to install it. Day to day, nothing runs as administrator.
 
@@ -91,4 +100,4 @@ GSPro, TruGolf, E6, ProTee and ProTee Labs are trademarks of their owners. BayLa
 endorsed by or sponsored by them. It only starts and closes the programs you set up; it does not change them.
 
 ---
-BayLauncher owner guide, version 2026-10-27 (BayLauncher 1.0.4). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-27 (BayLauncher 1.0.5). © 2026 BA Custom Products LLC.

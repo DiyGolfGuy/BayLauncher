@@ -45,4 +45,4 @@ starts normally and TruGolf's activation is still intact. A sport returning stra
 it was made an ender, or no explicit launcher ender was set.
 
 ---
-BayLauncher owner guide, version 2026-10-27 (BayLauncher 1.0.4). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-27 (BayLauncher 1.0.5). © 2026 BA Custom Products LLC.

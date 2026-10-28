@@ -2,10 +2,17 @@
 
 # Cards and Learn
 
-Each card is one game. Settings > **Cards** lists them in the order they appear.
+Each card is one activity: its game and, optionally, other apps that open with it. Settings > **Cards** lists
+them in the order they appear. A plain **Play Golf** card and a separate **Golf + Video** card can keep different
+companion apps and layouts.
 
 ## Open Settings
 Click the lock button in the top-right corner of the cards screen, enter the staff PIN, and choose **Settings**.
+
+**? Help** opens **Help & ideas**. Browse a chapter, choose a task such as **Arrange windows**, or search for words
+such as OBS, picture-in-picture, closing or desktop. Search works offline and shows the matching guide section.
+**Ctrl+F** selects search; **Clear** returns to all chapters. On a narrow window, a topic picker replaces the chapter
+list so the reading area stays useful.
 
 ## Before changing a working bay
 
@@ -37,7 +44,8 @@ The guided builder uses installed `.exe` programs. If an existing recipe needs a
 keep it in **Advanced launch and close settings** instead; choose its window wait and close names there yourself.
 
 Put the open steps in the order they need to run with **Up** and **Down**. **Add another program...** adds a separate
-open step; use it only for something the launcher does not start itself. **Arguments (optional)** are extra
+open step; use it only for something the launcher does not start itself. Expand **More options: arguments and waiting**
+when you need the advanced opening fields. **Arguments (optional)** are extra
 instructions, such as AutoStart's `/run`; leave them empty unless the program needs them.
 
 For **Other program**, the initial wait and close name come from the program you choose. If that program is only
@@ -104,6 +112,146 @@ newest 20 are kept. Settings > Tools > **Open data folder** lets you find them. 
 complete copy of the pictures. Use **Export settings and pictures...** for a full copy you can import through
 Tools. Ask BA Custom Products for help with a settings-only backup rather than guessing which file to replace on
 a working bay. A failed save leaves the previous configuration in use and keeps the edits available to correct.
+
+## Extra apps with a card
+
+Extra apps are optional. You can open a recording app such as OBS, a chat window, a browser, or another supported
+app alongside the game. These are examples, not the only choices. Keep the game's own opening and closing group
+separate from optional companions.
+
+1. Start with a working game card. To keep that card simple, choose **Duplicate**, then name the copy something
+   guests recognise, such as **Golf + Video** or **Golf + Chat**.
+2. In **Programs to open**, expand **Also open another app (optional)** and choose **Add app or website…**.
+3. In **Choose what to open**, enter a name and choose **App or website in my normal browser** for an ordinary
+   program or browser link. Choose **Website panel (Preview)** for the separate built-in website window below.
+   Extra program arguments are for ordinary apps that need them, not website panels.
+4. **Screen, size and position:** choose how the supported app's window should open. Read the mode's capability note;
+   a normal browser link and its manual PiP controls are different from a built-in website panel.
+5. **Opening and closing:** choose when it starts and both closing choices explained below.
+6. Choose **Apply to card draft**. This returns the changes to the card builder; it has not saved the card yet.
+   Review and choose **Try this card…**, finish the test, then choose **Save card**.
+
+Use **Edit app and layout…** to adjust an extra or **Remove** to take it out of this card. Removing an entry does
+not uninstall or close its app. **Cancel** leaves the card draft as it was before that editor opened. Changing a
+duplicate does not change the original card.
+
+For example, Multisport can remain on the projector while entertainment uses an otherwise unused TV. An OBS
+companion opens OBS itself; opening it does not start recording or streaming, or automatically extract its preview.
+A chat companion is an ordinary app window. Sign-in, playback, recording and game readiness remain things to
+check in those apps.
+
+### A website in a floating panel
+
+Choose **Website panel (Preview)**, then paste the site's full `https://` address into **Website address**. Use the
+normal website, such as a sports provider's watch page; this is not a replacement subscription or a universal video
+player. One built-in website panel can be configured on a card in this first version. If an earlier panel was deliberately
+kept open, close that panel before starting a different panel card: the new card leaves an already-open helper alone.
+
+Website panels require **Close every new app** to be off in the card's advanced settings, with browser programs kept out of the old opening, closing, ender and pre-close groups. This keeps the **Open in browser** fallback separate from the card's automatic cleanup.
+
+On **Screen, size and position**, choose the projector or TV. **Show website above the game (floating)** is selected initially: it
+requests a window above ordinary game windows. Choose a corner and adjust its size, then check the illustration.
+If the intended screen is not selected, choose it explicitly. For a website on the other screen without floating
+above its windows, choose **Normal website window** instead.
+
+The initial closing choices open the panel after the main card starts, leave golf running if the panel exits, and
+ask the panel to close normally when the card ends. Review those choices, choose **Apply to card draft**, test the
+whole card and **Save card**. The saved screen, size and position belong to that card. No Windows setting or separate
+window-pinning utility is needed to request this layout.
+
+The panel has its own address field, **Go**, **Back**, **Reload**, **Copy link**, **Open in browser** and **Close**. Move and resize
+it as an ordinary window. Its own controls remain outside the webpage. Opening a website does not automatically
+turn it into video-only PiP; use the site's normal playback controls and test its fullscreen button within the panel.
+A Play click may still be needed. Changing the displayed page does not replace the card's saved website address. If **Keep this app open** is selected, the built-in panel can remain after golf ends while
+BayLauncher is still running; it closes if its verified BayLauncher owner exits or becomes unavailable.
+
+### Sports and streaming websites
+
+YouTube, Netflix, NFL services and other sports providers are examples to try, not a supported-service list. Their
+sign-in, subscription, location, device and protected-video rules still apply. A page can open successfully while its
+video cannot play. Google account sign-in is not supported in this embedded web panel; other services may also need
+a normal supported browser. Use **Open in browser** if the panel cannot handle the site. That opens the regular
+browser route; its window layout, native PiP and closing remain manual.
+
+The panel does not open website popups, downloads or JavaScript alert/confirm/prompt dialogs. It asks before granting a website permission. Some legitimate
+TV sign-in or location checks depend on those capabilities and may need the normal browser. If WebView2 Runtime is
+missing or the panel cannot start, read its message and use **Open in browser** or close it. A Microsoft download-page
+button is available when the runtime is missing; the panel does not install it automatically. The game can
+continue. Neither a panel-start result nor a returned cards screen proves playback or a successful sign-in.
+
+## Saved layouts and floating windows
+
+The companion editor offers these window choices:
+
+- **App chooses:** leave the app's own size and position alone.
+- **Saved app window:** choose a screen and a size/position to restore when this card starts, where the app supports it.
+- **Floating app window:** use a supported app or built-in website panel above ordinary windows, with the card's
+  saved size and position. It is not a target-specific guarantee over only one named program.
+- **Browser picture-in-picture (manual):** use the browser's floating video controls. BayLauncher does not automatically
+  set that panel's screen, size or position, or close its browser for you.
+
+The built-in website panel can use saved or floating placement. An external website link opens in the normal browser
+and has no automatic saved-window placement or browser closing.
+
+For a saved or floating window, choose **Screen**, then adjust **Width**, **Height**, **From left** and **From top**.
+The screen illustration and corner buttons help you place it. You can drag the illustration or use the controls
+with the keyboard. The percentages describe the selected screen's available area, so the layout can adapt when its
+resolution changes. Every card keeps its own layout after **Save card** succeeds.
+
+An already-running or protected app is left alone. BayLauncher may be unable to move an app that manages its own
+window or uses a shared browser process. Read the result instead of assuming that opening the app also restored its
+layout. If the saved screen is unavailable, its optional extra is skipped and the saved layout is kept; it is not
+silently moved over golf. Edit the companion to choose another screen, then try and save the new choice.
+
+Moving an app during play does not silently replace its saved card layout. To change the saved layout, edit the
+card, adjust its companion, apply the draft and save the card. Cancelling the editor discards draft changes; it
+cannot undo a manual move you have already made in another app.
+
+### Watch video while you play
+
+For the built-in route, add **Website panel (Preview)** to the card as explained above. BayLauncher can request
+its saved screen, size, position and floating mode without the browser's PiP menu. The full website stays available;
+actual video, account access and controls depend on that provider.
+
+For the normal-browser route, open the video in a supported browser, start playback and use that browser's
+**Picture-in-picture** command. Drag and resize its floating panel, then click back into golf. Closing the PiP panel
+can leave the browser open, and hiding it does not necessarily stop playback. BayLauncher does not automatically
+restore a normal browser's PiP position.
+
+Floating windows need a compatible game display mode. If the game covers the extra window, try the game's own
+windowed or borderless mode and test it again. BayLauncher does not change that game setting for you. Check that you
+can return to golf after using the video's controls and that the game still plays smoothly. Keep the normal desktop
+escape directions available while testing.
+
+## What closes with a companion app
+
+The two choices are independent:
+
+1. **When this app exits:** **Leave the other apps running** keeps golf and the other companions going. **End this card and close its selected group**
+   asks to end the game and close the selected group after BayLauncher observes this owned app actually exit.
+   Minimising a window, hiding a video panel or returning a PiP video to its tab is not necessarily an app exit.
+2. **When this card ends:** **Keep this app open** leaves the companion running. **Ask this app to close normally** asks a
+   supported app started by this card to close normally. It does not force a recording app to stop or dismiss its prompts.
+
+For example, you can choose: "Closing OBS leaves golf running; ending golf asks OBS to close." Another choice is:
+"Closing this companion ends the card; ending the card leaves this companion open." Review both sentences before
+saving. Unsupported automatic close or exit tracking is unavailable; a browser opened through a website link is
+left open for you to manage. Personal windows that were already open and protected Windows/browser programs stay
+untouched.
+
+If an app remains open after a normal close request, review its prompt or finish that work yourself. An open app
+does not prove that a recording was saved, and a returned cards screen does not mean every companion was closed.
+Keep-open results and could-not-close results describe different outcomes. BayLauncher also requests restoration of
+window presentation that it changed, so keeping an app open is separate from keeping it pinned above other windows.
+If that cleanup cannot be confirmed, use **Retry companion cleanup** and read its result. That action can restore a
+kept-open app's presentation without closing it.
+
+### Check the whole combination
+
+Use **Try this card…** once you have reviewed the draft. Confirm the game's connection and playable screen, the
+companion's screen/size/position, and actual playback or recording separately. Then check a normal game exit, the
+back-to-games button and the companion's own exit choice. Start the card again yourself to check that its saved
+layout restores. Stop the test before saving. A placement result is not a playback or launch-monitor connection check.
 
 ## Learn: add the game's programs to the close list
 
@@ -182,4 +330,4 @@ the game before saving or making more card changes.
   utilities off the list, and do not click again while **Opening ...** is showing.
 
 ---
-BayLauncher owner guide, version 2026-10-27 (BayLauncher 1.0.4). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-27 (BayLauncher 1.0.5). © 2026 BA Custom Products LLC.

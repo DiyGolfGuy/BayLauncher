@@ -40,4 +40,4 @@ leftovers by hand. Leave the card unchanged if a known working bay uses a differ
 programs before changing it.
 
 ---
-BayLauncher owner guide, version 2026-10-27 (BayLauncher 1.0.4). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-27 (BayLauncher 1.0.5). © 2026 BA Custom Products LLC.

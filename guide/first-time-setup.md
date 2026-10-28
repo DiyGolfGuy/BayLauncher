@@ -19,5 +19,9 @@ chosen, so no guest can set one.
 
 Run it again any time: Settings > Tools > **Run the first-time setup again**.
 
+The optional help buttons explain the steps without changing your PIN, card or Windows account. When setup is
+finished, start with a simple working card; use Settings > Cards to add pictures, test it or duplicate it with
+optional extra apps and a different layout.
+
 ---
-BayLauncher owner guide, version 2026-10-27 (BayLauncher 1.0.4). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-10-27 (BayLauncher 1.0.5). © 2026 BA Custom Products LLC.
