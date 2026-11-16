@@ -97,34 +97,59 @@ showing a problem.
 
 ### Clicks to get in
 
-Some games open on a menu, an update notice or a sign-in screen. A card can make the mouse clicks that take guests
-to the screen they should start on. The clicks are recorded with **Watch me start it** on the page before: every
-left click you make inside the game's programs is noted, with a small picture of the spot. A card without clicks
-is normal for a game that opens ready to play.
+**Why you would want them.** Many games do not open ready to play. They open on a menu, an update notice, a
+"choose your course" screen or a sign-in, and somebody has to find the mouse and click through it before anyone
+can hit a ball. With start-up clicks the card does that itself, the same way every time: a guest taps **Play Golf**
+and ends up on the range, and staff do not have to walk over. A card without clicks is normal for a game that
+opens ready to play.
 
-When the card starts, BayLauncher makes each click in turn:
+**How to build them.** You do not place clicks by hand. You show them once:
 
-- It waits for that program's window, then until the spot looks the way it does in the picture. A slow day takes
-  longer; a fast day is not held back.
+1. On the page before, choose **Watch me start it...**.
+2. Start the game the way you always do, and click through to the screen guests should start on. Click at your
+   normal pace: BayLauncher notes where each click lands and how long you waited before it.
+3. Press **Ready**. This page then lists every click you made inside the game's programs, each with a small
+   picture of the spot and a red ring where you clicked.
+4. On the last page choose **Try this card...** and watch BayLauncher make the clicks itself.
+
+Clicks on the desktop, and clicks in programs that were already open, are not kept.
+
+**What BayLauncher does for each click, when the card starts:**
+
+- It **waits the time shown for that click**. That is the time you took when recording, counted from the click
+  before it (for the first click: from the moment its program's window showed).
+- It waits for that program's window, and, for a click set to **Then click once the screen looks like this
+  picture**, until the spot really looks that way. A slow day just takes longer.
+- It **moves the mouse to the spot and lets it settle** there (one second), checks once more that nothing
+  changed, and clicks. A button that has only just appeared does not always take a click at once.
 - It clicks only inside the program the click was recorded in. If another window is over the spot, it asks the game
-  to come to the front and waits.
-- If someone moves the mouse, it waits and tries again. It does not block the mouse or the keyboard.
+  to come to the front and waits. If someone moves the mouse, it waits and tries again. It does not block the
+  mouse or the keyboard.
 - Guests see a strip asking them to leave the mouse alone. **Esc** stops the clicks.
-- If a click cannot be made before its give-up time, the clicks stop there. The programs stay open, the strip says
-  so, and guests or staff carry on by hand. The log says which click and why.
 
-Each click shows its picture with a red ring on the spot, and how it waits:
+**Changing the timing.** Everything about the timing is yours to change on this page:
 
-- **When the screen looks like this picture (recommended).**
-- **After a fixed wait:** for a spot that is one plain colour or keeps moving, where the look cannot be used.
-  BayLauncher chooses this by itself for such spots and adds spare time. Lengthen it if the click comes too early.
+- **Wait before this click:** the seconds before each click. Make it longer when the game needs more time between
+  two clicks (a slow menu, a connection that takes a while), or shorter when you clicked slowly while recording.
+- **For every click: move the mouse to the spot, let it settle for ... seconds, then click** (top of the page):
+  one second to start; make it longer on a slower PC.
+- **Then click once the screen looks like this picture (recommended)** or **Then click, without checking the
+  screen**. Without the check the click goes by its wait alone, as a timed click. BayLauncher chooses that by
+  itself for a spot that is one plain colour or keeps moving, where there is nothing to check, and adds spare time.
+- **Give up after:** how many more seconds a click holds out for its window or its picture.
 
-**Give up after** is the longest BayLauncher waits for that click. **Remove this click** takes one out. To change
-where a click lands, go back and watch the start again.
+**Remove this click** takes one out. To change where a click lands, go back and watch the start again.
 
-Limits: left clicks only, no typing. A click is remembered as a place inside its program's window, so a moved
-window is fine; another screen resolution or a changed game menu can need a new recording. A program that runs as
-administrator cannot be clicked. Always use **Try this card** after recording.
+**When a click cannot be made.** The clicks stop there and the programs stay open, so guests or staff carry on
+with the mouse. The strip says so and the log says which click and why. In practice this happens after a game
+update changed a screen or added a notice: watch the start again and the card is right again.
+
+**What a click remembers, and its limits.** A click is a place inside its program's window, not a place on the
+screen, so it follows the window to another position, another screen or another window size. The picture it checks
+is taken at one screen resolution: after a change of resolution or scaling, a click that checks the screen waits
+and then gives up. Set it to **Then click, without checking the screen**, or watch the start again. Left clicks
+only, no typing. A program that runs as administrator cannot be clicked. Always use **Try this card** after
+recording.
 
 ### Programs to close
 
@@ -410,4 +435,4 @@ the game before saving or making more card changes.
   utilities off the list, and do not click again while **Opening ...** is showing.
 
 ---
-BayLauncher owner guide, version 2026-11-16 (BayLauncher 1.0.6). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-11-16 (BayLauncher 1.0.7). © 2026 BA Custom Products LLC.

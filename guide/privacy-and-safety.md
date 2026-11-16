@@ -48,4 +48,4 @@ privacy behavior. This is separate from the local launcher settings. A future op
 network and privacy explanation before release.
 
 ---
-BayLauncher owner guide, version 2026-11-16 (BayLauncher 1.0.6). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-11-16 (BayLauncher 1.0.7). © 2026 BA Custom Products LLC.

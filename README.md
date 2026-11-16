@@ -2,7 +2,7 @@
 
 **Free game cards for golf-simulator bays, by BA Custom Products.**
 
-> **Version 1.0.6:** making a card no longer needs a folder or a path. **Watch me start it** lets you start your
+> **Version 1.0.7:** making a card no longer needs a folder or a path. **Watch me start it** lets you start your
 > game by hand once while BayLauncher fills in the card, with every program the game needs and the clicks to get to
 > the right screen. You can also pick programs from a list, and **Combine...** puts two single-program cards
 > together. One card is one whole game: the launch monitor's software and the game go on the same card.
@@ -38,7 +38,8 @@ To stop BayLauncher for good on an account: number 3. Details: [Getting back to 
 - One card is one whole game: it opens every program the game needs, in order (the launch monitor's software, a
   connector, the game), waits for their windows, and closes them together.
 - **Watch me start it:** start your game by hand once and BayLauncher fills in the card. No folders or paths.
-- **Start-up clicks:** a card can click through a game's menu or notices to the screen guests should start on.
+- **Start-up clicks:** a card can click through a game's menu or notices to the screen guests should start on, at
+  the pace you recorded: it waits, moves the mouse, lets it settle, then clicks. Every wait can be changed.
 - A guided card builder takes you through a name and picture, what opens, the clicks, what closes, and a summary
   to try. Programs can be picked from a list of your shortcuts or of what is open right now.
 - **Learn** lists new programs for you to review and add to a card's close list.
@@ -105,4 +106,4 @@ GSPro, TruGolf, E6, ProTee and ProTee Labs are trademarks of their owners. BayLa
 endorsed by or sponsored by them. It only starts and closes the programs you set up; it does not change them.
 
 ---
-BayLauncher owner guide, version 2026-11-16 (BayLauncher 1.0.6). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-11-16 (BayLauncher 1.0.7). © 2026 BA Custom Products LLC.

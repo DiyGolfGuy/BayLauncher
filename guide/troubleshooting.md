@@ -29,9 +29,10 @@
 **The start-up clicks stop, or a click comes too early**
 - Settings > Cards > **Edit with guide...** > **Clicks to get in** shows every click with its picture.
   **Test card...** says which click stopped and why; the log has the same line.
-- "The screen never looked the way it did when the click was recorded": the game's menu changed, or the screen
-  resolution did. Watch the start again.
-- A click that comes too early: choose **After a fixed wait** for it and lengthen the wait.
+- "The screen never looked the way it did when the click was recorded": the game's menu changed (often after an
+  update), or the screen resolution did. Watch the start again.
+- A click that comes too early: on **Clicks to get in**, make **Wait before this click** longer for that click, or
+  make the settle time at the top of the page longer (one second is the start).
 - "Windows did not accept the click": the program runs as administrator. Turn that off in its
   Properties > Compatibility.
 
@@ -52,4 +53,4 @@
   record what BayLauncher did, never the PIN.
 
 ---
-BayLauncher owner guide, version 2026-11-16 (BayLauncher 1.0.6). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-11-16 (BayLauncher 1.0.7). © 2026 BA Custom Products LLC.

@@ -26,4 +26,4 @@ finished, start with a simple working card; use Settings > Cards to add pictures
 optional extra apps and a different layout.
 
 ---
-BayLauncher owner guide, version 2026-11-16 (BayLauncher 1.0.6). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-11-16 (BayLauncher 1.0.7). © 2026 BA Custom Products LLC.
