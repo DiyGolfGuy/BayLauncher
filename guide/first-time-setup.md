@@ -14,6 +14,8 @@ chosen, so no guest can set one.
 6. **Your first game card:** a recipe fills the card in. **GSPro with ProTee AutoStart**, **TruGolf Multisport** (it
    finds the sports in the launcher's Products folder and TruGolf's separately installed E6 games, and sets the time
    programs get to close to at least 30 seconds for all cards), **Another program**, or **Skip**.
+   The first choice is **Watch me start my game**: when the setup is finished, the card builder opens, and
+   **Watch me start it** fills in the card while you start your game by hand once.
 7. **Start the bay into the cards:** how to turn it on for the bay's Windows account.
 8. **All set.**
 
@@ -24,4 +26,4 @@ finished, start with a simple working card; use Settings > Cards to add pictures
 optional extra apps and a different layout.
 
 ---
-BayLauncher owner guide, version 2026-10-27 (BayLauncher 1.0.5). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-11-16 (BayLauncher 1.0.6). © 2026 BA Custom Products LLC.

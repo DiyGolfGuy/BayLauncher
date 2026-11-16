@@ -2,10 +2,12 @@
 
 **Free game cards for golf-simulator bays, by BA Custom Products.**
 
-> **Version 1.0.5:** optional extra apps with saved layouts, a built-in **Website panel (Preview)**, searchable
-> help and three new Free backgrounds. Website panels are an optional compatibility preview: a loaded window does
-> not prove a stream can play or sign in. See the checks and provider notes below. The separate customer paid Unlock
-> version, 1.1.0, remains unreleased.
+> **Version 1.0.6:** making a card no longer needs a folder or a path. **Watch me start it** lets you start your
+> game by hand once while BayLauncher fills in the card, with every program the game needs and the clicks to get to
+> the right screen. You can also pick programs from a list, and **Combine...** puts two single-program cards
+> together. One card is one whole game: the launch monitor's software and the game go on the same card.
+> These were checked on a Windows 11 PC with test programs, not with every launch monitor and game: after you make
+> a card, use **Try this card** on your own bay. The separate customer paid Unlock version, 1.1.0, remains unreleased.
 
 BayLauncher replaces the Windows desktop on a bay PC with big picture cards: GSPro, TruGolf Multisport or any other
 program. A guest clicks a card and the game opens. When the game is over, one button (a key combo, or a button on a
@@ -33,9 +35,12 @@ To stop BayLauncher for good on an account: number 3. Details: [Getting back to 
 
 ## What it does
 - Full-screen picture cards in place of the desktop, on the screen you choose. Your own card pictures.
-- A card can run several programs in order (for example ProTee AutoStart, which then opens GSPro) and waits for the
-  game window.
-- A guided card builder takes you through a name and picture, what opens, what closes, and a review.
+- One card is one whole game: it opens every program the game needs, in order (the launch monitor's software, a
+  connector, the game), waits for their windows, and closes them together.
+- **Watch me start it:** start your game by hand once and BayLauncher fills in the card. No folders or paths.
+- **Start-up clicks:** a card can click through a game's menu or notices to the screen guests should start on.
+- A guided card builder takes you through a name and picture, what opens, the clicks, what closes, and a summary
+  to try. Programs can be picked from a list of your shortcuts or of what is open right now.
 - **Learn** lists new programs for you to review and add to a card's close list.
 - **Test card...** uses the same launch and close engine as the cards screen. You check the game and its helpers on
   this PC; seeing a window does not prove the launch monitor is connected or the game is ready to play.
@@ -82,7 +87,7 @@ backgrounds and sponsor pictures, is planned for later. It is not available yet.
 - [Uninstalling](guide/uninstalling.md)
 
 ## What you need
-- A Windows 11 PC, 64-bit. New 1.0.5 window, website and game combinations still need hands-on testing on that PC.
+- A Windows 11 PC, 64-bit. Try each new card, window, website and game combination on that PC before guests use it.
   Windows 10 64-bit may work but is not tested.
 - The optional website panel needs Microsoft WebView2 Runtime and internet access for its websites. The runtime is
   normally included with Windows 11; if it is unavailable, the panel explains that and offers the normal browser.
@@ -100,4 +105,4 @@ GSPro, TruGolf, E6, ProTee and ProTee Labs are trademarks of their owners. BayLa
 endorsed by or sponsored by them. It only starts and closes the programs you set up; it does not change them.
 
 ---
-BayLauncher owner guide, version 2026-10-27 (BayLauncher 1.0.5). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-11-16 (BayLauncher 1.0.6). © 2026 BA Custom Products LLC.

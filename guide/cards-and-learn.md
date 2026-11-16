@@ -2,9 +2,14 @@
 
 # Cards and Learn
 
-Each card is one activity: its game and, optionally, other apps that open with it. Settings > **Cards** lists
-them in the order they appear. A plain **Play Golf** card and a separate **Golf + Video** card can keep different
-companion apps and layouts.
+**One card is one whole game.** A card holds everything that has to be open for guests to play: your launch
+monitor's own software, any connector, and the game itself. BayLauncher opens them in order, and when the game ends
+it closes them together and brings the cards back. Only one card runs at a time. If golf on your bay needs the
+launch monitor's software and a golf game, both go on the same card, called for example **Play Golf**. Do not make
+one card for the launch monitor and another for the game: the second cannot open while the first is running.
+
+Settings > **Cards** lists the cards in the order they appear. A plain **Play Golf** card and a separate
+**Golf + Video** card can keep different companion apps and layouts.
 
 ## Open Settings
 Click the lock button in the top-right corner of the cards screen, enter the staff PIN, and choose **Settings**.
@@ -21,9 +26,9 @@ current setup. Keep it somewhere safe before making several changes. Adding or e
 
 ## Make a card, one step at a time
 
-Choose **Add card** to open the guided builder. **Next** moves through its four pages, **Back** lets you change an
+Choose **Add card** to open the guided builder. **Next** moves through its pages, **Back** lets you change an
 earlier answer, and **Cancel** leaves the saved cards alone. **Help with this step** or F1 opens the current step's
-help. **Open full card help** opens this chapter. Both work without an internet connection.
+help. **Open the full card help** opens this chapter. Both work without an internet connection.
 
 ### Name and picture
 
@@ -33,57 +38,126 @@ check the choice. These are draft changes until **Save card** succeeds.
 
 ### Programs to open
 
-Choose **GSPro with ProTee AutoStart**, **TruGolf Multisport / E6 Product Launcher** or **Other program**, then
-**Use this setup...** and browse to that program on this PC. Recipes are starting points: check all program locations
-and the close group they suggest. Use **Other program** for one ordinary game or a different launcher, then add
-its game-only helpers after reviewing Learn. A recipe cannot know which helpers your particular bay needs.
-When editing a working card, keep its current programs unless you mean to replace the draft's open and close
-choices with a new setup.
+Everything this game needs goes on this one card: the launch monitor's software, any connector and the game. Two
+cards cannot run at the same time.
 
-The guided builder uses installed `.exe` programs. If an existing recipe needs a script or Windows shortcut,
-keep it in **Advanced launch and close settings** instead; choose its window wait and close names there yourself.
+**Easiest: Watch me start it.** Choose **Watch me start it...** and start the game by hand once, the way you do
+today. BayLauncher's windows step aside and your Windows desktop shows. On a bay that starts into the cards, the
+desktop and taskbar are started for you; they stay open behind the cards until the next sign-out, as after
+**Desktop**. A small bar says **BayLauncher is watching**.
 
-Put the open steps in the order they need to run with **Up** and **Down**. **Add another program...** adds a separate
-open step; use it only for something the launcher does not start itself. Expand **More options: arguments and waiting**
-when you need the advanced opening fields. **Arguments (optional)** are extra
-instructions, such as AutoStart's `/run`; leave them empty unless the program needs them.
+1. First close your golf programs if any are open, so they can be seen starting.
+2. Start every program the game needs, in your usual order, and click through until guests could start playing.
+3. Press **Ready** on the bar. If a full-screen game hides the bar, press your back-to-games button instead.
 
-For **Other program**, the initial wait and close name come from the program you choose. If that program is only
-a small starter for another game, change **Wait for** to the real game's window and add its actual program name
-to the close group. A background utility with no visible window cannot satisfy a window wait.
+BayLauncher then fills in the card: the programs you started, with their real locations and start-up options; the
+programs still running at the end, as the closing group; and your clicks. Check each page before saving. Only
+programs that start and left mouse clicks inside them are noted. The keyboard is not read, and clicks on the
+desktop or in programs that were already open are not kept. **Cancel** on the bar keeps nothing.
 
-Tick **Wait for a visible program window before continuing**, then enter **Program name or text in its window
-title** and **Maximum wait in seconds**. These are called **Wait for** and **Timeout (s)** in the advanced editor.
-The wait means a new visible window from a program that was not running when the card started. Use its program
-name without `.exe`, or words in its window title. It does not check a launch-monitor connection, sign-in, course
-loading or readiness to play. Untick the wait only when the next step can start immediately. On a startup failure,
-the normal engine cleans up and tries once more; a wrong wait can therefore take about twice the timeout before
+What it cannot see: a program that was already open is not seen starting, so close it and watch again. A program
+that runs as administrator cannot be started, clicked or closed by BayLauncher; turn that off in the program's
+Properties > Compatibility. Anything Windows started by itself in the meantime is offered unticked on the closing
+page.
+
+**Or pick the programs yourself.** Choose **Pick a program...** (later **+ Add another program...**). A list opens
+with three ways to find a program without knowing where it is installed:
+
+- **Programs on this PC:** every program with a shortcut on the desktop or in the Start menu, with its icon.
+  **Search** narrows the list.
+- **Open right now:** start the program the way you normally do, then pick it here by its window title.
+- **Not in the list?** **Browse for it...**, paste a path (in File Explorer: right-click the program, **Copy as
+  path**), or drag a program or shortcut onto the window.
+
+A shortcut is read for you: the card gets the real program file and the options the shortcut starts it with, so a
+desktop shortcut works here. Windows' own programs and uninstallers are left out of the list.
+
+Add one program for each thing you start yourself today, in the order you start them, and put them in order with
+the **▲** and **▼** arrows. Do not add what a program starts by itself (a connector, the game behind a launcher):
+that is found for you on the closing page.
+
+**Ready-made setups** (folded away at the bottom of the page) fill in one known combination: **GSPro with ProTee
+AutoStart**, **TruGolf Multisport / E6 Product Launcher** or **Other program**, then **Use this setup...** and browse
+to that program on this PC. Setups are starting points: check the program file and the closing programs they
+suggest. A setup cannot know which helpers your particular bay needs. When editing a working card, keep its
+current programs unless you mean to replace the draft's programs and closing choices with a new setup.
+
+Each program has **More options: file, start-up options and waiting**. **Start-up options (optional)** are extra
+instructions for the program, such as AutoStart's `/run`; leave them empty unless the program needs them.
+The advanced editor (Settings > Cards > **Advanced launch and close settings**) also takes scripts.
+
+Tick **Wait until this program shows a window before going on**, then enter **Program name, or words in its
+window title** and **Wait at most (seconds)**. These are called **Wait for** and **Timeout (s)** in the advanced
+editor. The wait means a new visible window from a program that was not running when the card started. Use its
+program name without `.exe`, or words in its window title. It does not check a launch-monitor connection,
+sign-in, course loading or readiness to play. Untick the wait only when the next program can start immediately.
+If a program is only a small starter for the real game, wait for the real game's window instead. On a start-up
+failure, BayLauncher cleans up and tries once more; a wrong wait can therefore take about twice the time before
 showing a problem.
+
+### Clicks to get in
+
+Some games open on a menu, an update notice or a sign-in screen. A card can make the mouse clicks that take guests
+to the screen they should start on. The clicks are recorded with **Watch me start it** on the page before: every
+left click you make inside the game's programs is noted, with a small picture of the spot. A card without clicks
+is normal for a game that opens ready to play.
+
+When the card starts, BayLauncher makes each click in turn:
+
+- It waits for that program's window, then until the spot looks the way it does in the picture. A slow day takes
+  longer; a fast day is not held back.
+- It clicks only inside the program the click was recorded in. If another window is over the spot, it asks the game
+  to come to the front and waits.
+- If someone moves the mouse, it waits and tries again. It does not block the mouse or the keyboard.
+- Guests see a strip asking them to leave the mouse alone. **Esc** stops the clicks.
+- If a click cannot be made before its give-up time, the clicks stop there. The programs stay open, the strip says
+  so, and guests or staff carry on by hand. The log says which click and why.
+
+Each click shows its picture with a red ring on the spot, and how it waits:
+
+- **When the screen looks like this picture (recommended).**
+- **After a fixed wait:** for a spot that is one plain colour or keeps moving, where the look cannot be used.
+  BayLauncher chooses this by itself for such spots and adds spare time. Lengthen it if the click comes too early.
+
+**Give up after** is the longest BayLauncher waits for that click. **Remove this click** takes one out. To change
+where a click lands, go back and watch the start again.
+
+Limits: left clicks only, no typing. A click is remembered as a place inside its program's window, so a moved
+window is fine; another screen resolution or a changed game menu can need a new recording. A program that runs as
+administrator cannot be clicked. Always use **Try this card** after recording.
 
 ### Programs to close
 
-Review every row. **Close** puts that program in this game's closing group. **Ends game** makes closing
-that program the signal to end the whole group and bring the cards back. Every ender must also have **Close**
-ticked. Use actual program names, without `.exe`, rather than a shortcut's display name. **Add name** or
-**Browse...** adds one. **Find programs in a folder...** offers unticked suggestions to review. **Learn by opening
-this card...** can find programs the launcher starts for you; review the results before adding them to the draft.
+When the game ends, BayLauncher closes every ticked program, so the next guest starts fresh. Tick every program
+that belongs to this game under **Closes with the card**. If a guest closes any ticked program that has a window,
+the game ends: BayLauncher closes the rest and the cards come back. That way nobody can close a connector and
+carry on with half a game.
 
-With no explicit enders, any close-listed program that BayLauncher has seen with a window can end the group.
-The GSPro and Other program recipes use this existing rule. If short-lived helpers should not end the game,
-choose explicit enders such as GSPro and ProTee Labs, keeping the connector and AutoStart as close-only rows.
-For E6 Multisport, only **E6 Product Launcher** is the ender: a sport's **Exit Game** must return to its menu.
-Sports and other game helpers close before the E6 launcher; use at least 30 seconds of closing grace.
-With no **Close** boxes ticked, the programs in the opening steps are still the fallback closing group.
+After **Watch me start it**, the list is already filled with what was still running, each with a few words about
+what was seen (its window title, or "works in the background"). Helpers, game stores and programs Windows started
+by itself in the meantime are listed unticked.
 
-Keep firmware updaters, maintenance/configuration tools, crash reporters, system or elevated programs and
-unrelated background utilities out of the group. Leave wider **also close any other program** cleanup off unless
-you deliberately need it. Recipes and Learn do not turn it on automatically.
+**Add a program that is not listed:** type its name as Task Manager shows it (without `.exe`) and choose **Add
+name**, or **Browse...** to its file. **Find programs in a folder...** offers unticked suggestions to review.
+**Learn by opening this card...** (under the fold-out below the list) opens the card, lets you look, and lists
+every program that appeared; tick the ones that belong to the game.
+
+**Advanced: let only one program end the game...** adds a column **Ends the game**. Use it for a launcher with
+several games: for E6 Multisport only **E6 Product Launcher** ends the game, so a sport's **Exit Game** goes back
+to the launcher's menu and not to the cards. Sports and other helpers close before the launcher; give programs at
+least 30 seconds to close. A program that ends the game must also be ticked to close. With nothing ticked at all,
+BayLauncher closes the programs the card opens.
+
+Keep firmware updaters, maintenance and configuration tools, crash reporters, system programs, programs that run
+as administrator and unrelated background utilities off the list. Leave the wider **also close any other
+program** cleanup (advanced editor) off unless you deliberately need it. Setups and Learn never turn it on.
 
 ### Review and try it
 
-Check the name, picture, open steps, closing group and enders. **Try this card...** starts real programs with the
-normal game engine. Check a normal quit, the back-to-games button, and a second launch. For E6, a sport's
-**Exit Game** must leave its launcher menu open; ending the session closes the sport before the launcher.
+The last page says in plain words what the card does: what opens when a guest taps it, in order; the clicks it
+makes; and what closes when the game ends. **Try this card...** starts the real programs exactly as a guest's tap
+would. Check a normal quit, the back-to-games button, and a second start. For E6, a sport's **Exit Game** must
+leave its launcher menu open; ending the session closes the sport before the launcher.
 
 A window appearing does not prove the game is connected or ready to play. Check that in the game yourself,
 and read any problem reported by the test. Finish the test and close its game before saving. **Save card** applies
@@ -91,10 +165,16 @@ the draft only after validation and a successful settings save. **Cancel** leave
 
 ## Edit, copy and undo
 
-Select a card in Settings > Cards and choose **Edit with guide...** to use the same four pages for an existing
+Select a card in Settings > Cards and choose **Edit with guide...** to use the same pages for an existing
 card. **Duplicate** opens a separate draft based on that card with a suggested new name; review its name and
 settings before saving. Use **Move up** and **Move down** to change carousel order, or **Delete** to remove a card
 after confirmation. Deleting a card does not uninstall its game.
+
+**Made one card per program?** A card for the launch monitor's software and another for the game cannot both
+run. Select the card that should open first, choose **Combine...** and pick the other card. The combined card
+opens in the guided builder: the first card's programs, then the second's; everything either card closed; each
+card's clicks with its own programs. Check it, try it, and **Save card**. Only then does it replace the first
+card, and the second card is removed. **Cancel** changes nothing.
 
 You can also change the selected card's name and picture in Settings, or expand **Advanced launch and close
 settings** for the original step grid and name lists. **Save card** applies those edits. If you move on with
@@ -330,4 +410,4 @@ the game before saving or making more card changes.
   utilities off the list, and do not click again while **Opening ...** is showing.
 
 ---
-BayLauncher owner guide, version 2026-10-27 (BayLauncher 1.0.5). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-11-16 (BayLauncher 1.0.6). © 2026 BA Custom Products LLC.

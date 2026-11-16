@@ -10,6 +10,11 @@
 - It does not alter the games' files or settings. It starts their configured programs and follows their closing
   choices; optional companion layouts can move and resize supported windows.
 - Day to day, nothing runs as administrator.
+- It makes mouse clicks only on cards where staff recorded start-up clicks, only inside those cards' programs, and
+  only while such a card starts. **Watch me start it** notes which programs start (their file locations and
+  start-up options) and where the left mouse button is clicked, from the moment staff start a recording until
+  **Ready** or **Cancel**. It does not read the keyboard, uses no keyboard or mouse hook, and never blocks input.
+  Small pictures of the clicked spots are kept with the card pictures on this PC.
 
 ## What it stores, and where
 - The program: `C:\Program Files\BA Custom Products\BayLauncher`.
@@ -43,4 +48,4 @@ privacy behavior. This is separate from the local launcher settings. A future op
 network and privacy explanation before release.
 
 ---
-BayLauncher owner guide, version 2026-10-27 (BayLauncher 1.0.5). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-11-16 (BayLauncher 1.0.6). © 2026 BA Custom Products LLC.
