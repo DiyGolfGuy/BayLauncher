@@ -95,6 +95,20 @@ backgrounds and sponsor pictures, is planned for later. It is not available yet.
 - The games already installed and working on that PC.
 - An administrator account to install it. Day to day, nothing runs as administrator.
 
+## Ask an AI
+Would you rather ask than read? Copy these lines into ChatGPT, Claude or another AI assistant, add your question
+at the end, and send it. The link is one file with this whole guide, written so an assistant can answer questions
+such as "how do I make one card for my launch monitor and my game?" or "how do I get back to the desktop?".
+
+```
+Please read https://raw.githubusercontent.com/DiyGolfGuy/BayLauncher/main/ASK-AI.md first.
+It is the complete official guide to BayLauncher, written for AI assistants. Follow its instructions.
+Then help me with BayLauncher, step by step. My question:
+```
+
+If the assistant cannot open links, open the link yourself, copy everything on the page and paste it into the
+chat. An AI can be wrong: if it names a button you cannot find, trust the program and this guide.
+
 ## Contact
 BA Custom Products: [bacustomproducts.com](https://www.bacustomproducts.com/)
 
