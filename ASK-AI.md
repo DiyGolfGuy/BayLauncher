@@ -2,7 +2,7 @@
 
 This one file holds everything about BayLauncher, the free game-card launcher for golf-simulator PCs by BA Custom
 Products: instructions for an AI assistant, short answers to common questions, and the complete owner guide.
-It is made from the owner guide, version 2026-11-16 (BayLauncher 1.0.7).
+It is made from the owner guide, version 2026-11-16 (BayLauncher 1.0.8).
 
 ## For people: how to ask an AI about BayLauncher
 
@@ -61,11 +61,15 @@ a Windows 11 PC. Many of them are not computer people. Follow these rules.
 - **Watch me start it** is the easiest way to make a card, for any launch monitor and any game: the person starts
   everything by hand once and BayLauncher records the programs and the clicks. Recommend it first.
 - **Start-up clicks** let a card click through a game's menus to the screen guests should start on. They are
-  recorded with Watch me start it, not placed by hand. Each click waits its own time, checks the screen, moves the
-  mouse, lets it settle, then clicks. The waits can be changed on the page **Clicks to get in**.
+  recorded with Watch me start it, not placed by hand. While recording, BayLauncher reads the words of each clicked
+  screen with the text reader built into Windows; when the card starts, each click waits until those words show
+  (however long the game takes that day), moves the mouse, lets it settle, then clicks. Cards recorded at one
+  resolution work at another. Waits can be changed on the page **Clicks to get in**.
 - **When one program of a card closes, the whole card closes** and the cards come back. That is on purpose.
-- **If a click cannot be made, the programs stay open** and the person carries on with the mouse. After a game
-  update changed a screen, the fix is to watch the start again.
+- **If a click cannot be made, the programs stay open** and the person carries on with the mouse. The log says
+  what BayLauncher read instead and keeps a picture of the screen in the logs folder. After a game update changed
+  a screen, the fix is **Teach this click again...** on that click (or watching the start again); a notice that
+  only comes now and then goes under **Notices to click away**.
 
 **What BayLauncher is not.**
 - It starts and closes programs. It does not connect a launch monitor, set up a game, or fix a game's licence or
@@ -102,11 +106,15 @@ program...** and select it from the list of your shortcuts, from the programs op
 the screen guests should start on, then press **Ready**. The clicks appear on the page **Clicks to get in**, each
 with a picture. **Try this card...** on the last page shows them being made.
 
-**A click comes too early, or the game needs more time.** On **Clicks to get in**, make **Wait before this click**
-longer for that click. The settle time at the top of that page (one second to start) can be made longer too.
+**A click comes too early, or the game needs more time.** A click set to **Then click as soon as the screen's words
+show** already waits for the game, however long it takes. For a click that goes by time, make **Wait before this
+click** longer on **Clicks to get in**. The settle time at the top of that page (one second to start) can be made
+longer too.
 
-**The clicks worked and now they stop.** Usually the game was updated and a screen changed. Open the card with
-**Edit with guide...**, go to **Programs to open** and choose **Watch me start it again...**.
+**The clicks worked and now they stop.** Usually the game was updated and a screen changed, or a new notice comes
+up. The log line names a picture of what BayLauncher saw (`click-not-made-...jpg` in the logs folder). Open the card
+with **Edit with guide...**, go to **Clicks to get in** and use **Teach this click again...** on that click, or type
+the notice's button words under **Notices to click away**.
 
 **How does a game end?** With the back-to-games button (a key combination or a BA control box button), or when a
 guest closes one of the card's programs. BayLauncher then closes everything on the card and shows the cards.
@@ -139,7 +147,7 @@ bay, **Import settings and pictures...** on the second. Check each card's progra
 
 # The complete BayLauncher owner guide
 
-Version 2026-11-16 (BayLauncher 1.0.7). 16 chapters follow, in the order of the printed guide.
+Version 2026-11-16 (BayLauncher 1.0.8). 16 chapters follow, in the order of the printed guide.
 
 ## Chapter: BayLauncher
 
@@ -181,8 +189,9 @@ To stop BayLauncher for good on an account: number 3. Details: [Getting back to 
 - One card is one whole game: it opens every program the game needs, in order (the launch monitor's software, a
   connector, the game), waits for their windows, and closes them together.
 - **Watch me start it:** start your game by hand once and BayLauncher fills in the card. No folders or paths.
-- **Start-up clicks:** a card can click through a game's menu or notices to the screen guests should start on, at
-  the pace you recorded: it waits, moves the mouse, lets it settle, then clicks. Every wait can be changed.
+- **Start-up clicks:** a card can click through a game's menu or notices to the screen guests should start on. Each
+  click waits until the game has really got to its screen (BayLauncher reads the screen's words with the text reader
+  built into Windows), then moves the mouse there, lets it settle and clicks. A slow start is simply waited for.
 - A guided card builder takes you through a name and picture, what opens, the clicks, what closes, and a summary
   to try. Programs can be picked from a list of your shortcuts or of what is open right now.
 - **Learn** lists new programs for you to review and add to a card's close list.
@@ -202,7 +211,8 @@ To stop BayLauncher for good on an account: number 3. Details: [Getting back to 
 
 ### Free
 BayLauncher is free, with every feature. Choose a built-in background in Settings > **Look**: Classic BA Custom
-Products, Midnight simulator, Golden-hour links or Mountain valley. Your choice appears behind the cards and on the
+Products, Midnight simulator, Golden-hour links, Mountain valley, Green contours, Night range, Dusk hills, Ball
+close-up, Yardage book or Fairway stripes. Your choice appears behind the cards and on the
 side screens. Classic keeps its original BA artwork and readable QR code; the other choices retain a small BA logo,
 BA Custom Products name and bacustomproducts.com advertising panel. An optional one-time unlock per PC, for your own
 backgrounds and sponsor pictures, is planned for later. It is not available yet.
@@ -450,24 +460,34 @@ opens ready to play.
 
 1. On the page before, choose **Watch me start it...**.
 2. Start the game the way you always do, and click through to the screen guests should start on. Click at your
-   normal pace: BayLauncher notes where each click lands and how long you waited before it.
+   normal pace: BayLauncher notes where each click lands, and reads the words on the screen you clicked on (the
+   button's words, such as PRACTICE RANGE, and a few other words of that screen).
 3. Press **Ready**. This page then lists every click you made inside the game's programs, each with a small
-   picture of the spot and a red ring where you clicked.
+   picture of the spot, a red ring where you clicked and the words it will wait for.
 4. On the last page choose **Try this card...** and watch BayLauncher make the clicks itself.
 
-Clicks on the desktop, and clicks in programs that were already open, are not kept.
+Clicks on the desktop, and clicks in programs that were already open, are not kept. To redo or add a single click
+later, use **Teach this click again...** or **Add a click...** (below).
 
 **What BayLauncher does for each click, when the card starts:**
 
-- It **waits the time shown for that click**. That is the time you took when recording, counted from the click
-  before it (for the first click: from the moment its program's window showed).
-- It waits for that program's window, and, for a click set to **Then click once the screen looks like this
-  picture**, until the spot really looks that way. A slow day just takes longer.
+- It **waits until the game has got to that click's screen**. For a click set to **Then click as soon as the
+  screen's words show**, BayLauncher reads the program's window with the text reader built into Windows (the same
+  one BA's ProTee AutoStart and BA Remapper use) until it finds the button's words and at least half of the other
+  words of that screen. Words that change, like a player's name, may be missing. Whether the game takes 3 seconds
+  or 30 on a given day, the click comes when the screen is there, and nobody has to guess the seconds.
+- A click set to **Then click once the screen looks like this picture** waits until the spot looks like its
+  picture instead; that is used where there are no words to read.
+- Before that, it waits the short time shown for that click (**Wait before this click**), counted from the click
+  before it (for the first click: from the moment its program's window showed). For a click that waits for words
+  this starts at one second; for the others it is the time you took when recording.
 - It **moves the mouse to the spot and lets it settle** there (one second), checks once more that nothing
   changed, and clicks. A button that has only just appeared does not always take a click at once.
 - It clicks only inside the program the click was recorded in. If another window is over the spot, it asks the game
   to come to the front and waits. If someone moves the mouse, it waits and tries again. It does not block the
-  mouse or the keyboard.
+  mouse or the keyboard. The mouse glides to the spot and the button is held down briefly, the way a hand clicks.
+- If the game is already past a click's screen (some games remember where they were, or skip a screen after an
+  update), BayLauncher sees the next click's screen instead, skips the click that is not needed today and carries on.
 - Guests see a strip asking them to leave the mouse alone. **Esc** stops the clicks.
 
 **Changing the timing.** Everything about the timing is yours to change on this page:
@@ -476,23 +496,38 @@ Clicks on the desktop, and clicks in programs that were already open, are not ke
   two clicks (a slow menu, a connection that takes a while), or shorter when you clicked slowly while recording.
 - **For every click: move the mouse to the spot, let it settle for ... seconds, then click** (top of the page):
   one second to start; make it longer on a slower PC.
-- **Then click once the screen looks like this picture (recommended)** or **Then click, without checking the
-  screen**. Without the check the click goes by its wait alone, as a timed click. BayLauncher chooses that by
-  itself for a spot that is one plain colour or keeps moving, where there is nothing to check, and adds spare time.
-- **Give up after:** how many more seconds a click holds out for its window or its picture.
+- **Then click as soon as the screen's words show (recommended)**, **Then click once the screen looks like this
+  picture**, or **Then click, without checking the screen**. Without a check the click goes by its wait alone, as
+  a timed click. BayLauncher chooses that by itself only where there are no words to read and the spot is one plain
+  colour or keeps moving, and adds spare time.
+- **Give up after:** how many more seconds a click holds out for its window and its screen. For a click that waits
+  for words this starts at a minute and a half or more, so a slow day or a slow update fits in.
 
-**Remove this click** takes one out. To change where a click lands, go back and watch the start again.
+**Teach this click again...** redoes one click: get the game to that click's screen, click the spot once and press
+**Use this click** on the small bar. The click keeps its place in the list and its times, and takes the new spot and
+the new screen's words. **Add a click...** does the same for a new click at the end. **Remove this click** takes one
+out.
+
+**Notices to click away.** Some programs now and then show a notice before their usual screen: an update prompt, a
+sign-in reminder, a "what's new" box. Those cannot be recorded in order, because they do not come every time. Type
+the words on the button that closes the notice, one per line (for example **Download Update** or **Skip**). While
+this card's clicks wait, BayLauncher clicks those words whenever one of the card's programs shows them, then goes
+on waiting for the next click's screen. Windows' own "Do you want to allow changes?" prompts cannot be clicked by
+any program.
 
 **When a click cannot be made.** The clicks stop there and the programs stay open, so guests or staff carry on
-with the mouse. The strip says so and the log says which click and why. In practice this happens after a game
-update changed a screen or added a notice: watch the start again and the card is right again.
+with the mouse. The strip says so, and the log says which click, why, what words BayLauncher read on the screen
+instead, and where it kept a picture of what it saw (`click-not-made-...jpg` in the logs folder). In practice this
+happens after a game update changed a screen or added a notice: look at the picture, then use **Teach this click
+again...** on that click, or add the notice's button words under **Notices to click away**.
 
 **What a click remembers, and its limits.** A click is a place inside its program's window, not a place on the
-screen, so it follows the window to another position, another screen or another window size. The picture it checks
-is taken at one screen resolution: after a change of resolution or scaling, a click that checks the screen waits
-and then gives up. Set it to **Then click, without checking the screen**, or watch the start again. Left clicks
-only, no typing. A program that runs as administrator cannot be clicked. Always use **Try this card** after
-recording.
+screen, so it follows the window to another position, another screen or another window size. The words and the
+picture it checks follow the window's size too, so a card recorded at one resolution also works at another. If a
+button's words have moved (another shape of screen), the click moves with them. Left clicks only, no typing. A
+program that runs as administrator cannot be clicked. Reading words needs a text-reading language in Windows (an
+English Windows has one); without it, clicks check the picture instead and the log says so once. Always use **Try
+this card** after recording.
 
 #### Programs to close
 
@@ -891,14 +926,14 @@ Settings > **Screens** lists every screen Windows knows.
 - Select the screen that should show the cards and press **Use for the carousel**. It is saved and used at once.
 - In the free edition, every screen uses the built-in background selected in **Look**. Classic BA Custom Products
   keeps the original whole artwork, faded on side screens and darker behind the cards, so its QR code stays readable.
-  Midnight simulator, Golden-hour links and Mountain valley fill the screen and retain a small BA logo, name and
-  bacustomproducts.com advertising panel.
+  The other backgrounds fill the screen and retain a small BA logo, name and bacustomproducts.com advertising panel.
 
 ### The look
 Settings > **Look** changes how the cards look. Try options and watch the preview; nothing changes on the cards
 screen until you press **Use this look** (**Undo** goes back).
-- **Free background**: Classic BA Custom Products, Midnight simulator, Golden-hour links or Mountain valley. The
-  preview shows your choice. **Use this look** saves it for the cards and side screens; **Undo** discards unsaved look
+- **Free background**: Classic BA Custom Products, three photo-style scenes (Midnight simulator, Golden-hour
+  links, Mountain valley) and six drawn backgrounds in full 4K (Green contours, Night range, Dusk hills, Ball
+  close-up, Yardage book, Fairway stripes). The preview shows your choice. **Use this look** saves it for the cards and side screens; **Undo** discards unsaved look
   changes. Free backgrounds keep BA advertising; custom background uploads remain an Owner/unlocked feature.
 - **Layout**: Carousel (big middle card), Row (all cards the same size), or Grid (rows of cards).
 - **Card size**: Small, Medium or Large.
@@ -990,8 +1025,10 @@ be chosen again with **...**. Screens are matched by Windows' screen names, so c
 **The start-up clicks stop, or a click comes too early**
 - Settings > Cards > **Edit with guide...** > **Clicks to get in** shows every click with its picture.
   **Test card...** says which click stopped and why; the log has the same line.
-- "The screen never looked the way it did when the click was recorded": the game's menu changed (often after an
-  update), or the screen resolution did. Watch the start again.
+- "The screen never showed ..." or "The screen never looked the way it did when the click was recorded": the
+  game's menu changed (often after an update) or a notice came up. The log line lists the words BayLauncher read
+  and names a picture of what it saw in the logs folder. Use **Teach this click again...** on that click, or add
+  the notice's button words under **Notices to click away**.
 - A click that comes too early: on **Clicks to get in**, make **Wait before this click** longer for that click, or
   make the settle time at the top of the page longer (one second is the start).
 - "Windows did not accept the click": the program runs as administrator. Turn that off in its
@@ -1030,6 +1067,9 @@ be chosen again with **...**. Screens are matched by Windows' screen names, so c
   start-up options) and where the left mouse button is clicked, from the moment staff start a recording until
   **Ready** or **Cancel**. It does not read the keyboard, uses no keyboard or mouse hook, and never blocks input.
   Small pictures of the clicked spots are kept with the card pictures on this PC.
+- To know when a game's screen is ready, it reads the words in the windows of the card's own programs with the
+  text reader built into Windows, on this PC: while staff record or teach a click, and while such a card starts.
+  Only the words of the clicked screens are kept in the card. Nothing is sent anywhere.
 
 ### What it stores, and where
 - The program: `C:\Program Files\BA Custom Products\BayLauncher`.
@@ -1040,6 +1080,8 @@ be chosen again with **...**. Screens are matched by Windows' screen names, so c
   Use **Open in browser** only when you intend to use that normal browser's own profile and sign-in. Consider who
   uses that browser before signing into a shared bay PC.
 - The staff PIN is stored only as a salted hash, never as the digits. Logs record each PIN attempt, never the digits.
+- When a start-up click cannot be made, a picture of that program's window as BayLauncher saw it, in the logs folder
+  (`click-not-made-...jpg`; the newest ten are kept), so staff can see what went wrong.
 - A Bay ID for this PC (Settings > About and the log): made from the motherboard's and the system disk's serial
   numbers with a one-way hash. The serial numbers themselves are not stored. It stays on the PC.
 
@@ -1074,4 +1116,4 @@ Only download BayLauncher from the link on bacustomproducts.com or from this pag
 file's SHA-256 checksum so you can check the file is the one BA Custom Products published.
 
 ---
-BayLauncher owner guide for AI assistants, version 2026-11-16 (BayLauncher 1.0.7). © 2026 BA Custom Products LLC.
+BayLauncher owner guide for AI assistants, version 2026-11-16 (BayLauncher 1.0.8). © 2026 BA Custom Products LLC.

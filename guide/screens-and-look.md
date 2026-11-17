@@ -8,14 +8,14 @@ Settings > **Screens** lists every screen Windows knows.
 - Select the screen that should show the cards and press **Use for the carousel**. It is saved and used at once.
 - In the free edition, every screen uses the built-in background selected in **Look**. Classic BA Custom Products
   keeps the original whole artwork, faded on side screens and darker behind the cards, so its QR code stays readable.
-  Midnight simulator, Golden-hour links and Mountain valley fill the screen and retain a small BA logo, name and
-  bacustomproducts.com advertising panel.
+  The other backgrounds fill the screen and retain a small BA logo, name and bacustomproducts.com advertising panel.
 
 ## The look
 Settings > **Look** changes how the cards look. Try options and watch the preview; nothing changes on the cards
 screen until you press **Use this look** (**Undo** goes back).
-- **Free background**: Classic BA Custom Products, Midnight simulator, Golden-hour links or Mountain valley. The
-  preview shows your choice. **Use this look** saves it for the cards and side screens; **Undo** discards unsaved look
+- **Free background**: Classic BA Custom Products, three photo-style scenes (Midnight simulator, Golden-hour
+  links, Mountain valley) and six drawn backgrounds in full 4K (Green contours, Night range, Dusk hills, Ball
+  close-up, Yardage book, Fairway stripes). The preview shows your choice. **Use this look** saves it for the cards and side screens; **Undo** discards unsaved look
   changes. Free backgrounds keep BA advertising; custom background uploads remain an Owner/unlocked feature.
 - **Layout**: Carousel (big middle card), Row (all cards the same size), or Grid (rows of cards).
 - **Card size**: Small, Medium or Large.
@@ -24,4 +24,4 @@ screen until you press **Use this look** (**Undo** goes back).
 - **Show the "click to play" hint** under the cards.
 
 ---
-BayLauncher owner guide, version 2026-11-16 (BayLauncher 1.0.7). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-11-16 (BayLauncher 1.0.8). © 2026 BA Custom Products LLC.

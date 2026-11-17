@@ -15,6 +15,9 @@
   start-up options) and where the left mouse button is clicked, from the moment staff start a recording until
   **Ready** or **Cancel**. It does not read the keyboard, uses no keyboard or mouse hook, and never blocks input.
   Small pictures of the clicked spots are kept with the card pictures on this PC.
+- To know when a game's screen is ready, it reads the words in the windows of the card's own programs with the
+  text reader built into Windows, on this PC: while staff record or teach a click, and while such a card starts.
+  Only the words of the clicked screens are kept in the card. Nothing is sent anywhere.
 
 ## What it stores, and where
 - The program: `C:\Program Files\BA Custom Products\BayLauncher`.
@@ -25,6 +28,8 @@
   Use **Open in browser** only when you intend to use that normal browser's own profile and sign-in. Consider who
   uses that browser before signing into a shared bay PC.
 - The staff PIN is stored only as a salted hash, never as the digits. Logs record each PIN attempt, never the digits.
+- When a start-up click cannot be made, a picture of that program's window as BayLauncher saw it, in the logs folder
+  (`click-not-made-...jpg`; the newest ten are kept), so staff can see what went wrong.
 - A Bay ID for this PC (Settings > About and the log): made from the motherboard's and the system disk's serial
   numbers with a one-way hash. The serial numbers themselves are not stored. It stays on the PC.
 
@@ -48,4 +53,4 @@ privacy behavior. This is separate from the local launcher settings. A future op
 network and privacy explanation before release.
 
 ---
-BayLauncher owner guide, version 2026-11-16 (BayLauncher 1.0.7). © 2026 BA Custom Products LLC.
+BayLauncher owner guide, version 2026-11-16 (BayLauncher 1.0.8). © 2026 BA Custom Products LLC.
